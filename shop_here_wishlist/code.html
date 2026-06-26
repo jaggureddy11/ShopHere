@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wishlist | SHOP HERE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f7f3f2",
+                    "on-surface": "#1c1b1b",
+                    "on-primary-container": "#858383",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#474746",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#ddd9d8",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "background": "#fdf8f8",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "tertiary-fixed": "#e6e2df",
+                    "surface-container": "#f1edec",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "secondary": "#5d5f5f",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-high": "#ebe7e6",
+                    "on-tertiary-container": "#868382",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e5e2e1",
+                    "surface": "#fdf8f8",
+                    "primary-container": "#1c1b1b",
+                    "secondary-fixed": "#e2e2e2",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-tint": "#5f5e5e",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#747878",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-error": "#ffffff",
+                    "tertiary": "#000000",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "inverse-on-surface": "#f4f0ef",
+                    "secondary-container": "#dcdddd",
+                    "inverse-primary": "#c8c6c5",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "on-surface-variant": "#444748",
+                    "primary": "#000000",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-container": "#1c1b1a",
+                    "surface-bright": "#fdf8f8",
+                    "on-background": "#1c1b1b",
+                    "on-secondary-container": "#5f6161"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-lg": "48px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "stack-sm": "12px",
+                    "container-max": "1440px",
+                    "stack-md": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .product-card-hover {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .product-card-hover:hover {
+            opacity: 0.9;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter">
+<a class="font-display text-headline-md font-bold tracking-tighter text-primary" href="#">SHOP HERE</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">NEW ARRIVALS</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">COLLECTIONS</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">TECH</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">STUDIO</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="cursor-pointer active:scale-95 transition-transform hover:opacity-70">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="cursor-pointer active:scale-95 transition-transform hover:opacity-70 relative">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="cursor-pointer active:scale-95 transition-transform hover:opacity-70">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-stack-lg min-h-screen">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<div class="mb-stack-lg">
+<h1 class="font-display text-headline-lg-mobile md:text-display font-bold uppercase tracking-tighter text-primary">
+                    YOUR WISHLIST
+                </h1>
+<p class="mt-4 font-body-lg text-on-surface-variant max-w-2xl">
+                    A curated selection of your most-wanted technology. Ready for the next upgrade.
+                </p>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-stack-lg">
+<!-- Product Card: Aura Noise-Cancelling Headphones -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-stack-sm">
+<img class="w-full h-full object-cover product-card-hover" data-alt="A professional studio product shot of minimalist Aura Noise-Cancelling Headphones in matte charcoal finish. The headphones are set against a clean, off-white background with soft, editorial lighting. The visual style is high-end tech luxury, emphasizing smooth textures and precise engineering details. The mood is calm, modern, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2_4ybbkZWWMzHYogaIo7wDHULMPGgkSSAZulMF6jLz2RfMlgy-siBJOKoEQEGouDodNbrOSXScT_6NMeg8YBJRB9Q7PgaJBQBnUr6rQue0Za3bq8M8sG5zt3C8ddq1sOGqruDpMGWP5Lo-NoWc-7uCUgk-LjIrOQ0ptLX_5FmQpdUhQeybggJQgM_IjMuANJYDAuYomEBGh6cJut21FF4FfHBfZzgtfr40tZRwaECK9w_yF2wqz3DyBIk0XxP_fJXfhuWsJMxkWc"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest">
+                            NEW
+                        </div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary uppercase tracking-tight">Aura Noise-Cancelling Headphones</h3>
+<span class="font-body-lg text-on-surface">$449.00</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="w-full bg-primary text-on-primary py-4 font-label-md text-label-md uppercase tracking-wider transition-all hover:opacity-90 active:scale-[0.98]">
+                            ADD TO BAG
+                        </button>
+<button class="w-full border border-outline py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:border-primary transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+                            REMOVE
+                        </button>
+</div>
+</div>
+<!-- Product Card: Lumina Smart Speaker -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-stack-sm">
+<img class="w-full h-full object-cover product-card-hover" data-alt="A high-end architectural product photography of the Lumina Smart Speaker, a cylindrical device with a refined mesh texture and a glowing light ring at the base. The lighting is low-key and dramatic, casting soft shadows in a minimalist high-tech interior. The palette is dominated by deep grays and subtle blue light accents, reflecting a futuristic retail aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgLcFoUb8PqcseGlhKQjcIk6JHWT1nne8ylxptkWN2X9NQcKfSqaYTfreSaN5eG4Q9g3f3TXiumrKjJtnBALDm4BtVRBNz_VJDq_Xo8BYPATtQa4a8GOkGdOYYnNxkZ5Nnwdmu4ddLobmuFpawG1UN-7Q10QJKqW8mX31-iLg9BGCxUIyoalGX8NLTgHL4YikiQ1c7WVDMXSw6BjTI28b-iyUJb1Jhuc8S_gp_uFQH2ARjVaOpYlP9E7FV4buJ-cbhTRw49qJ3ykA"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary uppercase tracking-tight">Lumina Smart Speaker</h3>
+<span class="font-body-lg text-on-surface">$299.00</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="w-full bg-primary text-on-primary py-4 font-label-md text-label-md uppercase tracking-wider transition-all hover:opacity-90 active:scale-[0.98]">
+                            ADD TO BAG
+                        </button>
+<button class="w-full border border-outline py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:border-primary transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+                            REMOVE
+                        </button>
+</div>
+</div>
+<!-- Product Card: Shift Mechanical Keyboard -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-stack-sm">
+<img class="w-full h-full object-cover product-card-hover" data-alt="A top-down editorial layout of a Shift Mechanical Keyboard with custom matte black keycaps and subtle RGB backlighting. The keyboard is placed on a pristine desk surface next to a glass of water, illustrating a professional studio environment. High contrast lighting emphasizes the sharp edges and premium build quality of the device, aligning with a sophisticated minimalist tech brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPhFQp7QEKI1QieV-fC-KEVh0kto_dug4m4mRdJepnCA_5vv0RoVDhDg6ujqqBoZNI3_9raF34X6xJRepYtcnSXKkrURSRY7jkWwQHvW5EH5b6elbulAURmzNTRozc57dBLnf3JLNafnR52lhpD6TdjtQIq4f1gpp0Mu_9AfKFFwX8bBEEbl8BgCOSVbpaPbPrPCn1VsgkaYJJDxeWwU-mdMShLgJuHn0uFxf9Qb9KN00h2CPdSbvMOWRSjiMCquz6HSV8aGzg6P8"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary uppercase tracking-tight">Shift Mechanical Keyboard</h3>
+<span class="font-body-lg text-on-surface">$189.00</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="w-full bg-primary text-on-primary py-4 font-label-md text-label-md uppercase tracking-wider transition-all hover:opacity-90 active:scale-[0.98]">
+                            ADD TO BAG
+                        </button>
+<button class="w-full border border-outline py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:border-primary transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+                            REMOVE
+                        </button>
+</div>
+</div>
+</div>
+<!-- Empty State Context / Recommendations (Optional but enhances high-end feel) -->
+<div class="mt-stack-lg border-t border-outline-variant pt-stack-lg">
+<div class="flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tighter">Recommended For You</h2>
+<a class="font-label-md text-label-md underline underline-offset-4 tracking-widest text-primary hover:opacity-70" href="#">VIEW ALL</a>
+</div>
+<div class="flex gap-gutter overflow-x-auto hide-scrollbar pb-8">
+<!-- Mini Card 1 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="aspect-square bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up shot of a sleek titanium laptop finish, focusing on the hinges and the reflective surface. Minimalist, bright studio lighting, light mode aesthetic, crisp lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGFQaNre1vUtyHEQt0m3SBWdtDb4mt8U_66DYP8hwpSCrxQm4u-woXdGMK7UBt8MuqVcdmyBlNP_sDnA8uQgsoEat-y_XBs2co3RDSWaaQFDlz8eH1HGkjoTDvDG51x7SnVe_gvUyhOaQ7cTy0K0St7KNBh15jbn8C1CKIyITdQ2TdvG_9VxJuEkcmH0qL5PkYeDeIC27PMqRoaNfdTjzhGzlx5nOBK_Y_wBiUYhYBPwhAP73DO-grc3M51GBEgSpOCIIRcGiiqfQ"/>
+</div>
+<p class="font-label-md text-label-md uppercase tracking-wider">Titan Pro Laptop</p>
+<p class="font-body-md text-on-surface-variant">$2,499.00</p>
+</div>
+<!-- Mini Card 2 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="aspect-square bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Professional macro photography of a glass-encased smart watch showing a minimal digital interface. High key lighting, sharp focus on the crystal edge, premium white and silver tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0xgnc69GyziLorSWdKlxg2DVap8FhWEF3HhFuyJuhgHsIumvfS9URJvRzA_jk1_yxn8lsxOZr86ejDE3jvOYX6yJz-6M_f-emT_GPzF3of5L4QIrbPYhU0Sh9jANbO4mHTjXqQqHra4bG2ykg8GpBvnrmFmPJi96xzUl2a2gQ37xP7t58Yo84Ucxwl_udKer78G5yQg4xX2qg3xC99mf5c9V6ilRV6kiNeqFJmxJqhJkChGyccoSkkltoyUv5GulWSy71TYK3TXE"/>
+</div>
+<p class="font-label-md text-label-md uppercase tracking-wider">Core Watch Series 4</p>
+<p class="font-body-md text-on-surface-variant">$599.00</p>
+</div>
+<!-- Mini Card 3 -->
+<div class="min-w-[280px] group cursor-pointer">
+<div class="aspect-square bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="High contrast studio shot of an ergonomic wireless mouse in a bright workspace environment. Minimal shadows, clean white surfaces, tech-forward aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3HOcBO-Dal7334W7dG7uk4T_joFF0UVi_ktSw9QrRcS5YUVGeok-_z860JV-ldTmW-s4O_TaI6Q8INS6WoSwt-MYLj6ztuM3ZK3C2pNirYNHdDNFJc8zC7QMbHwF7yzjeyrecIIxs3YV43adR8ay2gbkupIv8fkr4YBhCjOPuHqFuX3BfcMU_fz6ws5tOObwqKgfCofevGkeOiBWspW0tDSYZs783p1gYp2wg3RO2MFbIcFmrGhnOJD2D4jQYskvsealFvVSWHjg"/>
+</div>
+<p class="font-label-md text-label-md uppercase tracking-wider">Flow Wireless Mouse</p>
+<p class="font-body-md text-on-surface-variant">$99.00</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-stack-md md:gap-0">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-display text-headline-md font-bold tracking-tighter text-primary">SHOP HERE</span>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">© 2024 SHOP HERE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">PRIVACY POLICY</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">TERMS OF SERVICE</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">ACCESSIBILITY</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">CONTACT</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">LOCATIONS</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Visual feedback only as this is a UI prototype
+                console.log('Action triggered:', this.innerText || this.querySelector('span')?.getAttribute('data-icon'));
+            });
+        });
+
+        // Sticky Header behavior
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('shadow-sm');
+                header.classList.add('h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.add('h-20');
+                header.classList.remove('h-16');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

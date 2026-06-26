@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop Here | The Future of Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c4c7c7",
+                        "on-surface-variant": "#444748",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e6e2df",
+                        "surface": "#fdf8f8",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f7f3f2",
+                        "secondary-fixed": "#e2e2e2",
+                        "primary-container": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "outline": "#747878",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#ddd9d8",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "primary-fixed": "#e5e2e1",
+                        "background": "#fdf8f8",
+                        "surface-bright": "#fdf8f8",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "tertiary-container": "#1c1b1a",
+                        "secondary": "#5d5f5f",
+                        "on-primary-container": "#858383",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1edec",
+                        "inverse-surface": "#313030",
+                        "on-background": "#1c1b1b",
+                        "secondary-container": "#dcdddd",
+                        "primary": "#000000",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container-high": "#ebe7e6",
+                        "on-tertiary-container": "#868382",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#5f6161",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary-fixed": "#1c1b1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf8f8;
+            color: #1c1b1b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md font-black text-on-surface tracking-tighter" href="#">Shop Here</a>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-label-md font-label-md uppercase text-primary border-b-2 border-primary pb-1" href="#">New Arrivals</a>
+<a class="text-label-md font-label-md uppercase text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Categories</a>
+<a class="text-label-md font-label-md uppercase text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Sale</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container px-4 py-2">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-90"><span class="material-symbols-outlined">person</span></button>
+<button class="hover:opacity-80 transition-opacity active:scale-90"><span class="material-symbols-outlined">favorite</span></button>
+<button class="hover:opacity-80 transition-opacity active:scale-90 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] bg-surface-container overflow-hidden flex items-center px-margin-mobile md:px-margin-desktop">
+<div class="z-10 max-w-2xl">
+<span class="text-label-md font-label-md uppercase tracking-widest text-on-surface-variant mb-4 block">New Season 2024</span>
+<h1 class="text-headline-lg-mobile md:text-display font-display text-on-surface mb-8">The Future of Tech, Delivered.</h1>
+<p class="text-body-lg text-on-surface-variant mb-10 max-w-lg">Discover curated innovation designed for the modern professional. High-performance devices met with unparalleled aesthetic precision.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-10 py-4 font-label-md uppercase tracking-wider hover:opacity-90 transition-all">Shop Now</button>
+<button class="border border-primary text-primary px-10 py-4 font-label-md uppercase tracking-wider hover:bg-primary hover:text-white transition-all">Watch Film</button>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-1/2 h-full hidden lg:block">
+<div class="w-full h-full bg-cover bg-center" data-alt="A ultra-high-definition studio photograph of a sleek, charcoal gray flagship smartphone and premium wireless headphones resting on a minimalist marble surface. The lighting is soft and cinematic, highlighting the metallic textures and refined glass finish. The background is a clean, neutral studio gray, evoking a sense of luxury, precision, and high-end technology. The overall mood is sophisticated and editorial." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEN9ApZoU2io2rPH7D8I1Pp7CDmnZGaL4Y2IOHQvwEqdGz8Y217Jf0wqONyMRASkXFQujNPzbA8yXPV25pRe4laTZl5-GEjR3ueNd34xDdnEcrnsuhWvyTlzysMN2ryaY1TvKrDpHBGY3rfAWbaUMqGn4qW-e8lRMVmVgYlyZlBNW1N6bKtb_Hh8Tb4efCohp31LDxaF0vD7JwL-6PrgRhMirnaeFbaWbGKkWu3JijgcDjjrdz3kKS3vQtVjNhjlOO5aaE8Sj5bBc')">
+</div>
+</div>
+</section>
+<!-- Brand Promise -->
+<section class="py-stack-lg border-b border-outline-variant px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="flex flex-col items-center text-center p-gutter">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">local_shipping</span>
+<h3 class="text-label-md font-label-md uppercase mb-2">Free Shipping</h3>
+<p class="text-body-md text-on-surface-variant">On all orders over $150. Global delivery enabled.</p>
+</div>
+<div class="flex flex-col items-center text-center p-gutter">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">verified_user</span>
+<h3 class="text-label-md font-label-md uppercase mb-2">2-Year Warranty</h3>
+<p class="text-body-md text-on-surface-variant">Full protection for every piece of technology you own.</p>
+</div>
+<div class="flex flex-col items-center text-center p-gutter">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">support_agent</span>
+<h3 class="text-label-md font-label-md uppercase mb-2">24/7 Support</h3>
+<p class="text-body-md text-on-surface-variant">Our concierge team is here to assist you at any time.</p>
+</div>
+</div>
+</section>
+<!-- Featured Collections (Bento Grid Style) -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Featured Collections</h2>
+<p class="text-body-md text-on-surface-variant">Curated essentials for every aspect of your digital life.</p>
+</div>
+<a class="text-label-md font-label-md uppercase border-b border-primary pb-1 hidden md:block" href="#">View All Collections</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+<!-- Large Feature -->
+<div class="md:col-span-7 group relative overflow-hidden cursor-pointer bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist workspace featuring a high-end laptop, a slim mechanical keyboard, and a designer desk lamp. The setting is a bright, sunlit home office with large windows and a clean, white aesthetic. The image captures the 'Work from Anywhere' lifestyle with high-contrast shadows and a professional, serene mood. Predominant colors are crisp whites, soft grays, and deep charcoal accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs-7rwf84bwy5TWeWWy1nAbCRnQQ8tUNR7ZsUSu9QaF8oPi0cJ7pLdRU1ZsPb9fcKitGDVCyVhWJyoS1rEVgVi-7UybUKo7Sjx6J_s5dvmlQsDL5WzTIF_mMI0CRoklqNocF8NvZsxAxvN6vphU5M555Ik9iNgxpM8p4edasJQ2wc_jnB3bzKvUSd3SApsd3aADMrNUaIerltpDcs8hwYnwkysWZCti2ToT6gErasmAfT95q9oI-hQK9IcPrLoPntu8JLZxEnAUTQ')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<h3 class="text-headline-md font-headline-md mb-2">Work from Anywhere</h3>
+<p class="text-body-md opacity-90 mb-4">The ultimate productivity setup.</p>
+<span class="text-label-md font-label-md uppercase tracking-wider underline underline-offset-4">Explore Now</span>
+</div>
+</div>
+<!-- Vertical Split -->
+<div class="md:col-span-5 flex flex-col gap-gutter">
+<div class="flex-1 group relative overflow-hidden cursor-pointer bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A pair of high-fidelity, over-ear studio headphones in a matte black finish, resting on a textured wooden stand. The lighting focuses on the high-quality materials and craftsmanship. The aesthetic is moody and premium, emphasizing a 'Premium Audio' collection. The color palette consists of deep blacks, warm wood tones, and subtle metallic highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsqjl38SPWkRGxkcL01-HQhAsWZyYN_M-Yn1bkYCMb8yWkLj46RVEG6BJ53n5_5KWC8e1L-zxUXtT9s0FinHkwCg_m7IC_KaoVK46RKldBl5dVTbQ910ePlk2jLmj1giHyFv9HZSRuzbBWm7hhofVymgUFYoZeL8nwILfbx7gXV_Cx30DqLwHxw1SXGgHiQu1mNsA_rIJdYgO-dfaE9BMfEKqihxgV8Ha-WwEJKpJR-ahfJiYTR80cqyd3cwgyjMsSjHhcPrlJ8wI')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-headline-md font-headline-md">Premium Audio</h3>
+<span class="text-label-md font-label-md uppercase tracking-wider opacity-80">Discover sound</span>
+</div>
+</div>
+<div class="flex-1 group relative overflow-hidden cursor-pointer bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A sleek smart home control panel and voice assistant speaker integrated into a modern, minimalist living room with clean lines and architectural lighting. The scene represents 'Smart Living' with a focus on seamless technology. The lighting is soft and ambient, creating a warm yet futuristic atmosphere with neutral tones and metallic textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_40XoqMMRh8fOrU1E4GTEQU8iuKQzpjzSyHxf_Wu3vzOMSwhP4niFDW0dRiospFPdjYExGanpZG_2cduXotILf8MXMeTcj_NrbfQ0bpcRol3o6PK3H9QRf-N0-ya-6IpTGplyNXYNKIfjMbB9E3RhY49yMzH-9OYYE009642X1CvLbhTNVvME77hXtVga1i-F8I_yHS7VmQ2azc7uc5onfJr0l3sZOU79h0vkCC0HCeJROgT2frfiItbHZeIHj-lE3JeHAty0D5k')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-headline-md font-headline-md">Smart Living</h3>
+<span class="text-label-md font-label-md uppercase tracking-wider opacity-80">Shop Essentials</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Trending Now</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group flex flex-col">
+<div class="aspect-[3/4] relative bg-white overflow-hidden mb-4">
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 z-10">NEW</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A professional studio product shot of a minimalist smartwatch with a titanium case and a black silicon strap, shown from a dynamic three-quarter angle. The background is a clean, neutral white with soft shadows. The lighting is bright and clear, emphasizing the sharp edges and premium interface of the device. The style is modern, retail-focused, and highly detailed." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVyZuCtZf8_vGbC5OPn_fu6Pnxi7CKFNOaZRS8DRI90g6myHsPKpYgJ2TBAONKZXWb3gNEj2rlJjjFip0Y8sSy1LHvWB9aD0sH_WjicJYQbtqA2_y93bvzJCc3gov-nqbZ37j18i4W1w6C2RIIGlVGtsngrma9eXmuLJAr4N7vSyInTNNbtESljld3MpwBjXkH8qo1LTqC2ceD5ii_Ar4VICmBFugm_cMlG0LeQsxUTr7DCx6gMXtz9VVUlA3aiXudVS9FLT3-Mek')">
+</div>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-label-md uppercase">Add to Cart</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-tighter">Wearables</span>
+<h4 class="text-body-md font-semibold text-on-surface">Omni Watch Pro</h4>
+<p class="text-body-md text-primary">$499.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col">
+<div class="aspect-[3/4] relative bg-white overflow-hidden mb-4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, silver-finished ultra-thin laptop shown open in a minimalist studio setting. The screen displays a colorful abstract wallpaper that contrasts with the metallic body. The lighting is high-key and professional, highlighting the slim profile and precision-engineered hinges. The style is a clean, high-end commercial shot for a luxury tech brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeX2FuuWG5IhWyULUvHZGihBU8k-SfoTBV6LSPgj6hPEIUQK3V0Ja0zwNV9lvTKk3ZLIhR29zWioCCPRDtfx0tF6EW5aqJnMLH10q5XBSHwuhN_tONyS6T1tSoEhHD_y-5PqGNWAmtRU57iyD2VQhrO9Je21BjMUtKf44kzgJuyRdJQGW3NO4gPxNTvtoVPnptWjElClxZAFcaPROnr2WaJrpPV4K7D828hLe2cJLqRQkbQN8h0XqUz6ZBwCAICNRxTGz5r658kmg')">
+</div>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-label-md uppercase">Add to Cart</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-tighter">Computing</span>
+<h4 class="text-body-md font-semibold text-on-surface">Zenith Book 14</h4>
+<p class="text-body-md text-primary">$1,299.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col">
+<div class="aspect-[3/4] relative bg-white overflow-hidden mb-4">
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 z-10">BESTSELLER</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A pair of minimalist, noise-canceling earbuds in a matte porcelain white charging case. The case is shown slightly open, revealing one earbud with metallic contact points. The lighting is soft and ethereal, highlighting the curved, ergonomic design. The background is a very light gray tonal surface, creating a sophisticated and clean aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwBB2BICBVrLpLr1AU_Ma0Qy1ed7ZfmbWxkLR0JAqDXFv2k3eWux206E1PSXe6uewP007Mpbbu_ISaSAVYHsdLmmHeyS_lwweMFhyZez0b1f07FfUU8KHERJCII_njhy0P-BvKsvMYxhlfXicQcoxWb5xKuxWUVus43sf1vNvlSn8b0A7K-Kty2G3tlCoVVUwTWj1fV35QiumFMVWORthu_RLpDYrbOEsnWXl-yoQKnsUVfMvtGddMNJCpoM_3t9tRyLY6vf_VH7E')">
+</div>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-label-md uppercase">Add to Cart</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-tighter">Audio</span>
+<h4 class="text-body-md font-semibold text-on-surface">Echo Buds Gen 3</h4>
+<p class="text-body-md text-primary">$189.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col">
+<div class="aspect-[3/4] relative bg-white overflow-hidden mb-4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A professional DSLR camera with a large cinema lens, presented on a dark, reflective surface that creates a subtle mirror effect. The lighting is dramatic and low-key, emphasizing the complex controls and professional-grade build. The color palette is dark, dominated by blacks, deep grays, and a single red accent ring on the lens, creating an authoritative and premium feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7Amc1raXfxNi2woUKGIEYAnQR7HJXrmBVWGykEJhEZh8RqlDeEuL6CQvWN4wQW2s-RFHqMuL6dPacoKFnZ-tkuG5fNBIwR8IojtWBas1JrJ8FWU87ijlK_WZi2v34xKn4Vb05EUsNXOfAXccrPIPBkXp1C7w1zOgJmUv3WNm8dXqPcNjlANplL5FQkQ35l9XAz0H2zSp1dDFitEHkmj80QbsJtvuVHihMha_rFarSyl3LcR3F1jopZb59an2C4Hghe2p6pDLMlvg')">
+</div>
+<button class="absolute bottom-0 left-0 w-full bg-primary text-white py-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-label-md uppercase">Add to Cart</button>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-tighter">Photography</span>
+<h4 class="text-body-md font-semibold text-on-surface">Vision R5 Cinema</h4>
+<p class="text-body-md text-primary">$3,450.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-white">
+<div class="max-w-3xl mx-auto text-center">
+<span class="text-label-md font-label-md uppercase tracking-widest text-on-surface-variant mb-6 block">Stay Ahead</span>
+<h2 class="text-headline-lg font-headline-lg mb-6">Unlock exclusive access to future drops and innovations.</h2>
+<p class="text-body-lg text-on-surface-variant mb-10">Join our community of over 50k tech enthusiasts. No spam, just progress.</p>
+<form class="flex flex-col md:flex-row gap-0 max-w-xl mx-auto border-b border-primary">
+<input class="flex-grow py-4 px-2 bg-transparent border-none focus:ring-0 text-label-md uppercase tracking-wider outline-none" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="py-4 px-10 text-label-md font-bold uppercase tracking-widest text-primary hover:opacity-70 transition-opacity" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Cart Drawer - Hidden by Default) -->
+<div class="fixed inset-0 bg-black/40 z-[60] opacity-0 pointer-events-none transition-opacity duration-300" id="cart-drawer">
+<div class="fixed right-0 top-0 h-full z-[70] flex flex-col p-gutter w-full md:w-96 bg-surface-container-low shadow-2xl translate-x-full transition-transform duration-300" id="cart-content">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-headline-md font-headline-md uppercase text-primary tracking-tighter">Your Bag</h2>
+<p class="text-label-md font-label-md text-on-surface-variant">Items are reserved for 30 minutes</p>
+</div>
+<button class="p-2 hover:bg-surface-variant transition-colors" id="close-cart"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="flex-grow flex flex-col items-center justify-center text-center opacity-50">
+<span class="material-symbols-outlined text-6xl mb-4">shopping_cart</span>
+<p class="text-body-md">Your cart is currently empty.</p>
+</div>
+<div class="mt-auto pt-gutter border-t border-outline-variant">
+<div class="flex justify-between mb-6">
+<span class="font-bold uppercase tracking-wider">Total</span>
+<span class="font-bold">$0.00</span>
+</div>
+<button class="w-full bg-primary text-white py-5 font-label-md uppercase tracking-widest hover:opacity-90 transition-opacity">Checkout Now</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container border-t border-outline-variant">
+<div class="flex flex-col gap-6">
+<a class="text-headline-sm font-headline-sm font-bold text-primary" href="#">Shop Here</a>
+<p class="text-body-md text-on-surface-variant max-w-xs">Curating the world's most advanced technology and design for your digital lifestyle.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">brand_family</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-md font-label-md uppercase text-on-surface font-bold">Company Info</h4>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-md font-label-md uppercase text-on-surface font-bold">Customer Service</h4>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Track Order</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-md font-label-md uppercase text-on-surface font-bold">Privacy Policy</h4>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Statement</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Settings</a>
+<p class="text-body-sm text-on-surface-variant mt-4">© 2024 Shop Here. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and Drawer Logic
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartContent = document.getElementById('cart-content');
+        const cartTriggers = document.querySelectorAll('.shopping_bag, [data-icon="shopping_bag"], button .material-symbols-outlined:contains("shopping_bag")');
+        
+        // Find the shopping bag button more accurately
+        const cartBtn = document.querySelector('button .material-symbols-outlined:nth-child(1)');
+        
+        // Since labels/selectors might be tricky in generated code, let's target the shopping bag specifically
+        const bagButton = document.querySelector('button:has(.material-symbols-outlined:contains("shopping_bag"))') || 
+                          document.querySelectorAll('button')[2]; // Fallback to 3rd button in top bar
+
+        function openCart() {
+            cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
+            cartDrawer.classList.add('opacity-100');
+            cartContent.classList.remove('translate-x-full');
+        }
+
+        function closeCart() {
+            cartDrawer.classList.add('opacity-0');
+            cartContent.classList.add('translate-x-full');
+            setTimeout(() => {
+                cartDrawer.classList.add('pointer-events-none');
+                cartDrawer.classList.remove('opacity-100');
+            }, 300);
+        }
+
+        if(bagButton) bagButton.addEventListener('click', openCart);
+        document.getElementById('close-cart').addEventListener('click', closeCart);
+        cartDrawer.addEventListener('click', (e) => {
+            if (e.target === cartDrawer) closeCart();
+        });
+
+        // Add to cart feedback
+        const addToCartBtns = document.querySelectorAll('button:contains("Add to Cart")');
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.innerText = "ADDED";
+                btn.classList.replace('bg-primary', 'bg-green-600');
+                setTimeout(() => {
+                    btn.innerText = "ADD TO CART";
+                    btn.classList.replace('bg-green-600', 'bg-primary');
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>
