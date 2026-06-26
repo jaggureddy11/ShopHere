@@ -229,70 +229,91 @@ export default function HomePage() {
         )}
       </section>
 
-      {/* Promotional Offer Banners Grid */}
-      <section className="py-16 px-6 md:px-16 bg-white max-w-[1440px] mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-xl md:text-2xl font-black uppercase tracking-widest text-primary">
-            Grand Offers to Explore
+      {/* Premium Editorial Campaign Grid */}
+      <section className="py-24 px-6 md:px-16 bg-white max-w-[1440px] mx-auto border-t border-outline-variant/30">
+        {/* Elegant Section Header */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <span className="text-xs font-semibold uppercase tracking-[0.35em] text-outline mb-3">
+            Seasonal Collections
+          </span>
+          <h2 className="text-3xl md:text-5xl font-premium tracking-wide text-primary uppercase">
+            The Editorial Series
           </h2>
-          <div className="w-16 h-1 bg-[#fb56c1] mx-auto mt-2" />
+          <div className="w-12 h-[1px] bg-primary/30 mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Asymmetrical Collection Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-auto lg:h-[650px] overflow-hidden">
           
-          {/* Banner 1 */}
-          <Link 
-            href="/products?category=shoes"
-            className="group relative h-[250px] overflow-hidden flex flex-col justify-end p-6 border border-outline-variant shadow-sm bg-surface-dim"
-          >
-            <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600')" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-            <div className="relative z-10 text-white">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#ee5f73] block mb-1">Sneaker Head</span>
-              <h3 className="text-lg font-black uppercase tracking-tight mb-1">Flat 20% Off</h3>
-              <p className="text-xs text-white/80 font-medium uppercase tracking-wider mb-2">Selected Athletic Footwear</p>
-              <span className="text-[10px] font-black uppercase tracking-widest underline underline-offset-4">Shop Shoes</span>
-            </div>
-          </Link>
-
-          {/* Banner 2 */}
+          {/* Card 1: Tall / Featured (Left) - Takes 7 of 12 columns */}
           <Link 
             href="/products?category=womens-clothing"
-            className="group relative h-[250px] overflow-hidden flex flex-col justify-end p-6 border border-outline-variant shadow-sm bg-surface-dim"
+            className="group relative lg:col-span-7 h-[450px] lg:h-full overflow-hidden flex flex-col justify-end p-8 md:p-12 bg-surface-dim border border-outline-variant/20 shadow-md"
           >
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1595777707802-51b4c3a5aeef?w=600')" }}
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-[1000ms] ease-out group-hover:scale-105"
+              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000')" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/90" />
             <div className="relative z-10 text-white">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#fb56c1] block mb-1">Dresses & Tops</span>
-              <h3 className="text-lg font-black uppercase tracking-tight mb-1">Under $49</h3>
-              <p className="text-xs text-white/80 font-medium uppercase tracking-wider mb-2">Breezy & elegant coordinates</p>
-              <span className="text-[10px] font-black uppercase tracking-widest underline underline-offset-4">Shop Women</span>
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#fb56c1] block mb-2">01 / Vol. I</span>
+              <h3 className="text-2xl md:text-4xl font-premium tracking-wider uppercase mb-3">Womenswear Collection</h3>
+              <p className="text-xs md:text-sm text-white/80 font-medium tracking-wide max-w-md mb-6 leading-relaxed">
+                Breezy coordinates, minimal silhouettes, and refined tailoring designed for summer comfort.
+              </p>
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] border-b-2 border-white pb-1 group-hover:border-[#fb56c1] transition-colors">
+                Explore Editorial
+                <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+              </span>
             </div>
           </Link>
 
-          {/* Banner 3 */}
-          <Link 
-            href="/products?category=accessories"
-            className="group relative h-[250px] overflow-hidden flex flex-col justify-end p-6 border border-outline-variant shadow-sm bg-surface-dim"
-          >
-            <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600')" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-            <div className="relative z-10 text-white">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#f59e0b] block mb-1">Watches & Belts</span>
-              <h3 className="text-lg font-black uppercase tracking-tight mb-1">30% - 50% Off</h3>
-              <p className="text-xs text-white/80 font-medium uppercase tracking-wider mb-2">Elevate your overall outfit</p>
-              <span className="text-[10px] font-black uppercase tracking-widest underline underline-offset-4">Shop Accessories</span>
-            </div>
-          </Link>
+          {/* Right Column Container - Takes 5 of 12 columns and splits into 2 stacked cards */}
+          <div className="lg:col-span-5 flex flex-col gap-8 h-full">
+            
+            {/* Card 2: Men's Clothing (Top Right) */}
+            <Link 
+              href="/products?category=mens-clothing"
+              className="group relative flex-1 h-[300px] lg:h-1/2 overflow-hidden flex flex-col justify-end p-8 bg-surface-dim border border-outline-variant/20 shadow-md"
+            >
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-[1000ms] ease-out group-hover:scale-105"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800')" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/90" />
+              <div className="relative z-10 text-white">
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#ee5f73] block mb-2">02 / Vol. II</span>
+                <h3 className="text-xl md:text-2xl font-premium tracking-wider uppercase mb-2">Menswear Essentials</h3>
+                <p className="text-xs text-white/70 font-medium tracking-wide mb-4">Flat 20% off selected smart-casual outerwear.</p>
+                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] border-b border-white pb-1 group-hover:border-[#ee5f73] transition-colors">
+                  Shop Men
+                  <span className="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+                </span>
+              </div>
+            </Link>
+
+            {/* Card 3: Accessories (Bottom Right) */}
+            <Link 
+              href="/products?category=accessories"
+              className="group relative flex-1 h-[300px] lg:h-1/2 overflow-hidden flex flex-col justify-end p-8 bg-surface-dim border border-outline-variant/20 shadow-md"
+            >
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-[1000ms] ease-out group-hover:scale-105"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=800')" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/90" />
+              <div className="relative z-10 text-white">
+                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#f59e0b] block mb-2">03 / Vol. III</span>
+                <h3 className="text-xl md:text-2xl font-premium tracking-wider uppercase mb-2">Luxury Accessories</h3>
+                <p className="text-xs text-white/70 font-medium tracking-wide mb-4">Up to 50% off timeless leather articles & timepieces.</p>
+                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] border-b border-white pb-1 group-hover:border-[#f59e0b] transition-colors">
+                  Shop Accessories
+                  <span className="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+                </span>
+              </div>
+            </Link>
+
+          </div>
 
         </div>
       </section>
