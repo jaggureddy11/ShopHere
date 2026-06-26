@@ -5,43 +5,16 @@ import Link from 'next/link';
 import { IProduct } from '@/types';
 import axiosInstance from '@/utils/axiosInstance';
 import ProductCard from '@/components/ProductCard';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HomePage() {
   const [featuredProducts, setFeaturedProducts] = useState<IProduct[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
-  // Hero Slider Content
-  const slides = [
-    {
-      title: "Chic Essentials",
-      subtitle: "Elevated Men's Apparel",
-      tagline: "Crisp outlines, tailored comfort, and timeless designs for the modern wardrobe.",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1600",
-      link: "/products?category=mens-clothing"
-    },
-    {
-      title: "Fluid Silhouettes",
-      subtitle: "Contemporary Women's Style",
-      tagline: "Sophisticated drapes, vibrant colorways, and lightweight silhouettes for any event.",
-      image: "https://images.unsplash.com/photo-1509319117193-57bab727e09d?q=80&w=1600",
-      link: "/products?category=womens-clothing"
-    },
-    {
-      title: "Performance Fit",
-      subtitle: "Activewear & Athletic Gear",
-      tagline: "Moisture-wicking, engineered fibers designed to move with you effortlessly.",
-      image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1600",
-      link: "/products?category=sportswear"
-    }
-  ];
-
-  // Auto advance slides
+  // Set mounted flag to prevent SSR/hydration mismatch
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5500);
-    return () => clearInterval(timer);
+    setMounted(true);
   }, []);
 
   // Fetch Featured Products (8 products limit)
@@ -61,100 +34,199 @@ export default function HomePage() {
     fetchFeatured();
   }, []);
 
-  // Circular categories
-  const circularCategories = [
-    { name: "Men", slug: "mens-clothing", img: "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=150&h=150&fit=crop" },
-    { name: "Women", slug: "womens-clothing", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" },
-    { name: "Kids", slug: "kids", img: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=150&h=150&fit=crop" },
-    { name: "Shoes", slug: "shoes", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=150&h=150&fit=crop" },
-    { name: "Accessories", slug: "accessories", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&h=150&fit=crop" },
-    { name: "Sportswear", slug: "sportswear", img: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=150&h=150&fit=crop" }
-  ];
 
   return (
     <div className="w-full bg-white select-none overflow-x-hidden">
-      
-      {/* Circular Categories Bar (Myntra Inspired) */}
-      <section className="py-6 border-b border-outline-variant bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-16 flex justify-around items-center gap-4 overflow-x-auto no-scrollbar">
-          {circularCategories.map((cat, idx) => (
-            <Link 
-              key={idx} 
-              href={`/products?category=${cat.slug}`}
-              className="flex flex-col items-center gap-2 group shrink-0"
-            >
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border border-outline-variant p-0.5 group-hover:border-primary transition-all duration-300 transform group-hover:scale-105 shadow-sm">
+
+
+      {/* Premium Minimalist Logo Canvas Hero Section */}
+      <section className="relative w-full h-auto md:h-[600px] bg-white border-b border-outline-variant flex flex-col items-center overflow-hidden py-12 md:py-0">
+        {!mounted ? (
+          // Static Server-Render / Initial Client-Render Placeholder
+          <div className="w-full h-full flex flex-col md:flex-row items-center justify-between">
+            {/* Left Model Container */}
+            <div className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-start pl-16 lg:pl-24">
+              <img 
+                src="/model-female.png?v=2" 
+                alt="Stitch Female Model" 
+                className="h-full w-auto object-contain select-none pointer-events-none"
+              />
+            </div>
+
+            {/* Center Brand Container */}
+            <div className="w-full md:w-[40%] flex flex-col items-center justify-center text-center px-6 py-8 md:py-0">
+              {/* Logo */}
+              <img 
+                src="/logo.png" 
+                alt="Shop Here Logo" 
+                className="h-32 md:h-44 w-auto object-contain mix-blend-multiply" 
+              />
+              
+              {/* Brand Title */}
+              <h1 className="font-premium text-3xl md:text-5xl font-black uppercase text-primary mt-6 tracking-[0.25em]">
+                Shop Here
+              </h1>
+
+              {/* Accent divider line */}
+              <div className="w-20 h-[1px] bg-primary/20 my-6" />
+
+              {/* CTA Button */}
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-3 bg-primary text-white border border-primary px-10 py-4 text-xs font-black uppercase tracking-[0.25em]"
+              >
+                Shop Now
+                <span className="material-symbols-outlined text-[16px]">arrow_right_alt</span>
+              </Link>
+            </div>
+            
+            {/* Right Model Container */}
+            <div className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-end pr-16 lg:pr-24">
+              <img 
+                src="/model.png?v=2" 
+                alt="Stitch Male Model" 
+                className="h-full w-auto object-contain select-none pointer-events-none"
+              />
+            </div>
+
+            {/* Mobile Layout for Models (stacked under center brand) */}
+            <div className="flex md:hidden w-full px-6 gap-4 h-[250px] mt-6 justify-center">
+              <div className="w-1/2 h-full flex items-center justify-center">
                 <img 
-                  src={cat.img} 
-                  alt={cat.name} 
-                  className="w-full h-full object-cover rounded-full"
+                  src="/model-female.png?v=2" 
+                  alt="Stitch Female Model" 
+                  className="h-full w-auto object-contain select-none pointer-events-none"
                 />
               </div>
-              <span className="text-[11px] font-black uppercase tracking-wider text-primary group-hover:underline transition-all">
-                {cat.name}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Interactive Hero Slider */}
-      <section className="relative w-full h-[500px] md:h-[650px] bg-surface-dim overflow-hidden">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 w-full h-full flex items-center px-6 md:px-16 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
-          >
-            {/* Background Image with Overlay */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center transform scale-100 transition-transform duration-[5500ms]"
-              style={{ 
-                backgroundImage: `url('${slide.image}')`,
-                transform: index === currentSlide ? 'scale(1.05)' : 'scale(1.00)'
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-full md:w-[60%] lg:w-[45%]" />
-            <div className="absolute inset-0 bg-black/5" />
-
-            {/* Slide Content */}
-            <div className={`relative z-10 max-w-xl text-primary transition-all duration-700 transform ${
-              index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-            }`}>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#fb56c1] mb-2 block font-mono">
-                {slide.subtitle}
-              </span>
-              <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-4 leading-none text-primary">
-                {slide.title}
-              </h1>
-              <p className="text-sm md:text-base text-primary/80 mb-8 max-w-sm leading-relaxed font-semibold">
-                {slide.tagline}
-              </p>
-              <div>
-                <Link
-                  href={slide.link}
-                  className="inline-block bg-primary text-white px-10 py-4 text-xs font-black uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all shadow-md rounded-none"
-                >
-                  Explore Now
-                </Link>
+              <div className="w-1/2 h-full flex items-center justify-center">
+                <img 
+                  src="/model.png?v=2" 
+                  alt="Stitch Male Model" 
+                  className="h-full w-auto object-contain select-none pointer-events-none"
+                />
               </div>
             </div>
           </div>
-        ))}
+        ) : (
+          // Framer Motion Animated Version (hydrated client)
+          <div className="w-full h-full flex flex-col md:flex-row items-center justify-between">
+            {/* Left Model Container */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-start pl-16 lg:pl-24"
+            >
+              <img 
+                src="/model-female.png?v=2" 
+                alt="Stitch Female Model" 
+                className="h-full w-auto object-contain select-none pointer-events-none"
+              />
+            </motion.div>
 
-        {/* Slider Dots */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                idx === currentSlide ? 'bg-primary w-6' : 'bg-outline-variant hover:bg-outline'
-              }`}
-            />
-          ))}
-        </div>
+            {/* Center Brand Container */}
+            <div className="w-full md:w-[40%] flex flex-col items-center justify-center text-center px-6 py-8 md:py-0">
+              
+              {/* Animated Logo Image */}
+              <motion.div
+                initial={{ scale: 0.85, rotate: -10, opacity: 0 }}
+                animate={{ scale: 1, rotate: 0, opacity: 1 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 70, 
+                  damping: 14, 
+                  delay: 0.15 
+                }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotate: 5,
+                  transition: { type: "spring", stiffness: 300, damping: 10 } 
+                }}
+                className="cursor-pointer select-none"
+              >
+                <img 
+                  src="/logo.png" 
+                  alt="Shop Here Logo" 
+                  className="h-32 md:h-44 w-auto object-contain mix-blend-multiply" 
+                />
+              </motion.div>
+              
+              {/* Animated Brand Title with Letter-Spacing Expansion */}
+              <motion.h1
+                initial={{ opacity: 0, y: 15, letterSpacing: "0.1em" }}
+                animate={{ opacity: 1, y: 0, letterSpacing: "0.25em" }}
+                transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="font-premium text-3xl md:text-5xl font-black uppercase text-primary mt-6 select-none"
+              >
+                Shop Here
+              </motion.h1>
+
+              {/* Animated Thin Accent Line */}
+              <div className="w-20 h-[1px] bg-primary/20 my-6 relative overflow-hidden">
+                <motion.div
+                  initial={{ left: "-100%" }}
+                  animate={{ left: "0%" }}
+                  transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                  className="absolute inset-0 bg-primary/50"
+                />
+              </div>
+
+              {/* Animated CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link
+                  href="/products"
+                  className="inline-flex items-center gap-3 bg-primary text-white border border-primary px-10 py-4 text-xs font-black uppercase tracking-[0.25em] hover:bg-white hover:text-primary transition-all duration-500 shadow-md group/btn"
+                >
+                  Shop Now
+                  <span className="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">
+                    arrow_right_alt
+                  </span>
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Right Model Container */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-end pr-16 lg:pr-24"
+            >
+              <img 
+                src="/model.png?v=2" 
+                alt="Stitch Male Model" 
+                className="h-full w-auto object-contain select-none pointer-events-none"
+              />
+            </motion.div>
+
+            {/* Mobile Layout for Models (stacked under center brand) with animations */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.5, ease: "easeOut" }}
+              className="flex md:hidden w-full px-6 gap-4 h-[250px] mt-6 justify-center"
+            >
+              <div className="w-1/2 h-full flex items-center justify-center">
+                <img 
+                  src="/model-female.png?v=2" 
+                  alt="Stitch Female Model" 
+                  className="h-full w-auto object-contain select-none pointer-events-none"
+                />
+              </div>
+              <div className="w-1/2 h-full flex items-center justify-center">
+                <img 
+                  src="/model.png?v=2" 
+                  alt="Stitch Male Model" 
+                  className="h-full w-auto object-contain select-none pointer-events-none"
+                />
+              </div>
+            </motion.div>
+          </div>
+        )}
       </section>
 
       {/* Promotional Offer Banners Grid */}
