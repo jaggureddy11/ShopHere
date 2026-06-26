@@ -271,7 +271,7 @@ export default function HomePage() {
           <Link href="/products?category=mens-clothing" className="group relative flex flex-col items-center cursor-pointer pb-8">
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800" 
+                src="/images/community/mens_campaign.png" 
                 alt="Menswear Campaign" 
                 className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
