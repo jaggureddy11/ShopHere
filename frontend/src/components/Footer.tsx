@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
     <footer className="bg-primary text-white pt-16 pb-8 px-4 md:px-16 border-t border-outline-variant">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2 mb-6">
-            <img src="/logo.png" alt="Shop Here Logo" className="h-8 w-auto object-contain invert brightness-200" />
-            <h2 className="text-xl font-bold tracking-tighter uppercase">Shop Here</h2>
+          <div className="flex items-center gap-3 mb-6">
+            <img src="/logo.png" alt="Shop Here Logo" className="h-10 w-auto object-contain invert mix-blend-screen" />
+            <h2 className="text-2xl font-premium tracking-tighter uppercase">Shop Here</h2>
           </div>
           <p className="text-sm text-outline-variant max-w-xs leading-relaxed mb-6">
             Discover curated innovations designed for the modern professional. High-performance devices met with unparalleled aesthetic precision.

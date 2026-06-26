@@ -43,9 +43,9 @@ const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 w-full z-50 flex justify-between items-center px-4 md:px-16 py-4 bg-white border-b border-outline-variant transition-all duration-300">
       <div className="flex items-center gap-8">
-        <Link href="/" className="flex items-center gap-2 group">
-          <img src="/logo.png" alt="Shop Here Logo" className="h-10 w-auto object-contain transition-transform duration-300 group-hover:rotate-6" />
-          <span className="text-xl font-black text-primary tracking-tighter uppercase">
+        <Link href="/" className="flex items-center gap-3 group">
+          <img src="/logo.png" alt="Shop Here Logo" className="h-12 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
+          <span className="text-2xl font-premium text-primary tracking-tighter uppercase">
             Shop Here
           </span>
         </Link>

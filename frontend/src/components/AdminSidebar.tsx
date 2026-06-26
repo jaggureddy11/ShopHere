@@ -39,9 +39,9 @@ const AdminSidebar: React.FC = () => {
   return (
     <aside className="w-full md:w-64 bg-primary text-white flex flex-col min-h-screen border-r border-white/10 shrink-0">
       <div className="p-6 border-b border-white/10">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-85 transition-opacity group">
-          <img src="/logo.png" alt="Shop Here Logo" className="h-7 w-auto object-contain invert brightness-200 transition-transform duration-300 group-hover:rotate-6" />
-          <span className="text-lg font-black uppercase tracking-tighter text-white font-black">
+        <Link href="/" className="flex items-center gap-3 hover:opacity-85 transition-opacity group">
+          <img src="/logo.png" alt="Shop Here Logo" className="h-9 w-auto object-contain invert mix-blend-screen transition-transform duration-300 group-hover:rotate-6" />
+          <span className="text-xl font-premium uppercase tracking-tighter text-white">
             Shop Here
           </span>
         </Link>
