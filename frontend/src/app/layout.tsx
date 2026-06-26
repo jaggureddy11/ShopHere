@@ -6,7 +6,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Shop Here | High-End Tech Retail',
   description: 'Curated innovation designed for the modern professional. High-performance devices met with unparalleled aesthetic precision.',
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL('http://localhost:3003'),
 };
 
 export default function RootLayout({
