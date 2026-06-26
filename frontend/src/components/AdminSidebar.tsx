@@ -39,8 +39,11 @@ const AdminSidebar: React.FC = () => {
   return (
     <aside className="w-full md:w-64 bg-primary text-white flex flex-col min-h-screen border-r border-white/10 shrink-0">
       <div className="p-6 border-b border-white/10">
-        <Link href="/" className="text-xl font-black uppercase tracking-tighter block hover:opacity-85 transition-opacity text-white">
-          Shop Here
+        <Link href="/" className="flex items-center gap-2 hover:opacity-85 transition-opacity group">
+          <img src="/logo.png" alt="Shop Here Logo" className="h-7 w-auto object-contain invert brightness-200 transition-transform duration-300 group-hover:rotate-6" />
+          <span className="text-lg font-black uppercase tracking-tighter text-white font-black">
+            Shop Here
+          </span>
         </Link>
         <span className="text-[10px] font-bold tracking-widest text-outline-variant uppercase mt-1 block">
           Admin Portal

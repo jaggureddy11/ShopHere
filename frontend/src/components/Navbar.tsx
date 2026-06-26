@@ -43,8 +43,11 @@ const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 w-full z-50 flex justify-between items-center px-4 md:px-16 py-4 bg-white border-b border-outline-variant transition-all duration-300">
       <div className="flex items-center gap-8">
-        <Link href="/" className="text-2xl font-black text-primary tracking-tighter uppercase">
-          Shop Here
+        <Link href="/" className="flex items-center gap-2 group">
+          <img src="/logo.png" alt="Shop Here Logo" className="h-10 w-auto object-contain transition-transform duration-300 group-hover:rotate-6" />
+          <span className="text-xl font-black text-primary tracking-tighter uppercase">
+            Shop Here
+          </span>
         </Link>
         <nav className="hidden md:flex gap-6 items-center">
           <Link href="/products?category=mens-clothing" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#ee5f73] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
