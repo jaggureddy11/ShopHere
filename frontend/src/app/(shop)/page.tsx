@@ -350,6 +350,143 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Community / Modern Silhouettes Section */}
+      <section className="w-full bg-[#f8f9fa] py-24 overflow-hidden flex flex-col items-center">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center px-6 max-w-3xl mx-auto mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-outline-variant mb-6"
+          >
+            <span className="material-symbols-outlined text-[16px]">public</span>
+            <span className="text-xs font-semibold">Stay connected</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-[3.5rem] font-medium text-[#1a1a1a] tracking-tight leading-[1.1] mb-6"
+          >
+            See our community <br /> in modern silhouettes
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-outline text-sm md:text-base mb-8 max-w-lg leading-relaxed"
+          >
+            Connect with us on social media for a daily dose of fresh style, featuring exclusive looks from our community.
+          </motion.p>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <Link href="/products" className="bg-[#1a1a1a] text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-black transition-all hover:scale-105 active:scale-95 shadow-lg">
+              See collections
+            </Link>
+            <Link href="#" className="bg-white text-[#1a1a1a] px-8 py-4 rounded-full text-sm font-semibold border border-outline-variant hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-sm">
+              Contact us
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* 3D Gallery */}
+        <div className="relative w-full max-w-[1600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] mx-auto flex justify-center items-center overflow-visible" style={{ perspective: '1500px' }}>
+          <div className="relative w-full h-full flex justify-center items-center">
+            
+            {/* Card 0 (Far Left) */}
+            <div 
+              className="absolute w-[140px] h-[210px] sm:w-[200px] sm:h-[300px] md:w-[260px] md:h-[390px] lg:w-[300px] lg:h-[450px] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl transition-all duration-500 ease-out origin-center cursor-pointer group hover:!translate-x-[-210%] hover:!scale-110 hover:!rotate-0 hover:!z-50 hover:opacity-100 opacity-60"
+              style={{
+                left: '50%',
+                transform: 'translateX(-210%) rotateY(38deg) scale(0.82)',
+                zIndex: 10,
+                boxShadow: '-15px 15px 25px rgba(0,0,0,0.2)',
+              }}
+            >
+              <img src="/images/community/c1.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 1" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-xs font-semibold tracking-wider uppercase">Urban Style</p>
+              </div>
+            </div>
+
+            {/* Card 1 (Left) */}
+            <div 
+              className="absolute w-[140px] h-[210px] sm:w-[200px] sm:h-[300px] md:w-[260px] md:h-[390px] lg:w-[300px] lg:h-[450px] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 ease-out origin-center cursor-pointer group hover:!translate-x-[-135%] hover:!scale-110 hover:!rotate-0 hover:!z-50 hover:opacity-100 opacity-85"
+              style={{
+                left: '50%',
+                transform: 'translateX(-135%) rotateY(20deg) scale(0.95)',
+                zIndex: 20,
+                boxShadow: '-10px 10px 20px rgba(0,0,0,0.25)',
+              }}
+            >
+              <img src="/images/community/c2.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 2" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-xs font-semibold tracking-wider uppercase">Streetwear</p>
+              </div>
+            </div>
+
+            {/* Card 2 (Center) */}
+            <div 
+              className="absolute w-[140px] h-[210px] sm:w-[200px] sm:h-[300px] md:w-[260px] md:h-[390px] lg:w-[300px] lg:h-[450px] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 ease-out origin-center cursor-pointer group hover:!translate-x-[-50%] hover:!scale-120 hover:!rotate-0 hover:!z-50 z-30"
+              style={{
+                left: '50%',
+                transform: 'translateX(-50%) rotateY(0deg) scale(1.1)',
+                boxShadow: '0 25px 50px -12px rgba(0,0,0,0.4)',
+              }}
+            >
+              <img src="/images/community/c3.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 3" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Community Core</p>
+              </div>
+            </div>
+
+            {/* Card 3 (Right) */}
+            <div 
+              className="absolute w-[140px] h-[210px] sm:w-[200px] sm:h-[300px] md:w-[260px] md:h-[390px] lg:w-[300px] lg:h-[450px] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-500 ease-out origin-center cursor-pointer group hover:!translate-x-[35%] hover:!scale-110 hover:!rotate-0 hover:!z-50 hover:opacity-100 opacity-85"
+              style={{
+                left: '50%',
+                transform: 'translateX(35%) rotateY(-20deg) scale(0.95)',
+                zIndex: 20,
+                boxShadow: '10px 10px 20px rgba(0,0,0,0.25)',
+              }}
+            >
+              <img src="/images/community/c4.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 4" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-xs font-semibold tracking-wider uppercase">Minimalist</p>
+              </div>
+            </div>
+
+            {/* Card 4 (Far Right) */}
+            <div 
+              className="absolute w-[140px] h-[210px] sm:w-[200px] sm:h-[300px] md:w-[260px] md:h-[390px] lg:w-[300px] lg:h-[450px] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl transition-all duration-500 ease-out origin-center cursor-pointer group hover:!translate-x-[110%] hover:!scale-110 hover:!rotate-0 hover:!z-50 hover:opacity-100 opacity-60"
+              style={{
+                left: '50%',
+                transform: 'translateX(110%) rotateY(-38deg) scale(0.82)',
+                zIndex: 10,
+                boxShadow: '15px 15px 25px rgba(0,0,0,0.2)',
+              }}
+            >
+              <img src="/images/community/c5.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-xs font-semibold tracking-wider uppercase">Casual Fit</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Brand Values Banner */}
       <section className="py-12 bg-white border-t border-outline-variant px-6 md:px-16 max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
