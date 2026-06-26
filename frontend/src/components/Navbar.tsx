@@ -47,12 +47,27 @@ const Navbar: React.FC = () => {
           Shop Here
         </Link>
         <nav className="hidden md:flex gap-6 items-center">
-          <Link href="/products" className="text-sm font-semibold uppercase text-primary hover:opacity-80 transition-opacity">
-            Shop Catalog
+          <Link href="/products?category=mens-clothing" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#ee5f73] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            Men
+          </Link>
+          <Link href="/products?category=womens-clothing" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#fb56c1] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            Women
+          </Link>
+          <Link href="/products?category=kids" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#f26a10] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            Kids
+          </Link>
+          <Link href="/products?category=shoes" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#0db89e] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            Shoes
+          </Link>
+          <Link href="/products?category=accessories" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#f59e0b] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            Accessories
+          </Link>
+          <Link href="/products?category=sportswear" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#3b82f6] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            Sportswear
           </Link>
           {user?.role === 'admin' && (
-            <Link href="/admin/dashboard" className="text-sm font-semibold uppercase text-accent hover:opacity-80 transition-opacity">
-              Admin Dashboard
+            <Link href="/admin/dashboard" className="text-xs font-bold uppercase text-accent hover:opacity-80 transition-opacity ml-2">
+              Admin
             </Link>
           )}
         </nav>
@@ -80,7 +95,7 @@ const Navbar: React.FC = () => {
                 </span>
               </button>
               <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-outline-variant p-2 hidden group-hover:block shadow-editorial">
-                <Link href="/dashboard" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">
+                <Link href="/profile" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">
                   My Profile
                 </Link>
                 <Link href="/orders" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">

@@ -26,7 +26,7 @@ const addressSchema = z.object({
 type ProfileFields = z.infer<typeof profileSchema>;
 type AddressFields = z.infer<typeof addressSchema>;
 
-export default function UserDashboard() {
+export default function UserProfile() {
   const router = useRouter();
   const { isAuthenticated, user, setUser, isLoading } = useAuthStore();
   const [mounted, setMounted] = useState(false);
@@ -61,8 +61,8 @@ export default function UserDashboard() {
   useEffect(() => {
     if (mounted) {
       if (!isAuthenticated) {
-        toast.info('Please sign in to view your dashboard.');
-        router.push('/login?redirect=/dashboard');
+        toast.info('Please sign in to view your profile.');
+        router.push('/login?redirect=/profile');
       } else if (user) {
         setProfileValue('name', user.name);
         setProfileValue('phone', user.phone || '');
@@ -74,7 +74,7 @@ export default function UserDashboard() {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-white">
         <div className="text-xs font-bold uppercase tracking-widest animate-pulse">
-          Loading dashboard...
+          Loading profile...
         </div>
       </div>
     );
@@ -151,7 +151,7 @@ export default function UserDashboard() {
   return (
     <div className="max-w-[1440px] mx-auto py-16 px-6 md:px-16 text-primary bg-white">
       <h1 className="text-3xl font-black uppercase tracking-tighter mb-12 border-b border-outline-variant pb-6">
-        My Dashboard
+        My Profile
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

@@ -52,7 +52,7 @@ export default function RegisterPage() {
         await fetchCart();
         await fetchWishlist();
 
-        router.push('/dashboard');
+        router.push('/');
       }
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Registration failed. Please try again.');

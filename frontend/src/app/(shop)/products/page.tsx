@@ -18,6 +18,7 @@ function ProductsContent() {
 
   // Filter States
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');
+  const [selectedSubcategory, setSelectedSubcategory] = useState(searchParams.get('subcategory') || '');
   const [minPrice, setMinPrice] = useState(searchParams.get('minPrice') || '');
   const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || '');
   const [sort, setSort] = useState(searchParams.get('sort') || 'newest');
@@ -43,6 +44,7 @@ function ProductsContent() {
   // Sync state with search params changes
   useEffect(() => {
     setSelectedCategory(searchParams.get('category') || '');
+    setSelectedSubcategory(searchParams.get('subcategory') || '');
     setMinPrice(searchParams.get('minPrice') || '');
     setMaxPrice(searchParams.get('maxPrice') || '');
     setSort(searchParams.get('sort') || 'newest');
@@ -56,6 +58,7 @@ function ProductsContent() {
       try {
         const queryParams = new URLSearchParams();
         if (selectedCategory) queryParams.set('category', selectedCategory);
+        if (selectedSubcategory) queryParams.set('subcategory', selectedSubcategory);
         if (minPrice) queryParams.set('minPrice', minPrice);
         if (maxPrice) queryParams.set('maxPrice', maxPrice);
         if (sort) queryParams.set('sort', sort);
@@ -77,10 +80,11 @@ function ProductsContent() {
     };
 
     fetchProducts();
-  }, [selectedCategory, minPrice, maxPrice, sort, page, search]);
+  }, [selectedCategory, selectedSubcategory, minPrice, maxPrice, sort, page, search]);
 
   const updateURL = (newFilters: {
     category?: string;
+    subcategory?: string;
     minPrice?: string;
     maxPrice?: string;
     sort?: string;
@@ -89,8 +93,17 @@ function ProductsContent() {
     const current = new URLSearchParams(Array.from(searchParams.entries()));
     
     if (newFilters.category !== undefined) {
-      if (newFilters.category) current.set('category', newFilters.category);
-      else current.delete('category');
+      if (newFilters.category) {
+        current.set('category', newFilters.category);
+        current.delete('subcategory'); // Clear subcategory when category changes
+      } else {
+        current.delete('category');
+        current.delete('subcategory');
+      }
+    }
+    if (newFilters.subcategory !== undefined) {
+      if (newFilters.subcategory) current.set('subcategory', newFilters.subcategory);
+      else current.delete('subcategory');
     }
     if (newFilters.minPrice !== undefined) {
       if (newFilters.minPrice) current.set('minPrice', newFilters.minPrice);
@@ -114,6 +127,7 @@ function ProductsContent() {
 
   const handleClearAll = () => {
     setSelectedCategory('');
+    setSelectedSubcategory('');
     setMinPrice('');
     setMaxPrice('');
     setSort('newest');
@@ -176,6 +190,47 @@ function ProductsContent() {
                   }`}
                 >
                   {cat.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Subcategories */}
+          <div className="space-y-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest border-b border-outline-variant pb-2">
+              Subcategory
+            </h3>
+            <div className="flex flex-col gap-2 max-h-48 overflow-y-auto pr-1 no-scrollbar">
+              <button
+                onClick={() => updateURL({ subcategory: '' })}
+                className={`text-left text-xs font-semibold uppercase tracking-wider py-1 hover:opacity-75 transition-opacity ${
+                  selectedSubcategory === '' ? 'text-primary font-bold underline' : 'text-outline'
+                }`}
+              >
+                All Subcategories
+              </button>
+              {(selectedCategory === 'mens-clothing'
+                ? ['T-Shirts', 'Shirts', 'Jeans', 'Shorts', 'Sweaters', 'Jackets']
+                : selectedCategory === 'womens-clothing'
+                ? ['Dresses', 'Tops', 'Jeans', 'Skirts', 'Sweaters', 'Jackets']
+                : selectedCategory === 'kids'
+                ? ['Boys & Girls Clothing']
+                : selectedCategory === 'shoes'
+                ? ['Sneakers', 'Formal', 'Casual', 'Sports']
+                : selectedCategory === 'accessories'
+                ? ['Watches', 'Belts', 'Scarves', 'Bags', 'Caps', 'Eyewear']
+                : selectedCategory === 'sportswear'
+                ? ['Activewear', 'Running Gear', 'Yoga', 'Sports']
+                : ['T-Shirts', 'Shirts', 'Jeans', 'Dresses', 'Tops', 'Sneakers', 'Formal', 'Casual', 'Bags', 'Watches', 'Activewear']
+              ).map((sub) => (
+                <button
+                  key={sub}
+                  onClick={() => updateURL({ subcategory: sub })}
+                  className={`text-left text-xs font-semibold uppercase tracking-wider py-1 hover:opacity-75 transition-opacity ${
+                    selectedSubcategory === sub ? 'text-primary font-bold underline' : 'text-outline'
+                  }`}
+                >
+                  {sub}
                 </button>
               ))}
             </div>

@@ -53,7 +53,9 @@ export default function LoginPage() {
         if (user.role === 'admin') {
           router.push('/admin/dashboard');
         } else {
-          router.push('/dashboard');
+          const searchParams = new URLSearchParams(window.location.search);
+          const redirect = searchParams.get('redirect') || '/';
+          router.push(redirect);
         }
       }
     } catch (error: any) {

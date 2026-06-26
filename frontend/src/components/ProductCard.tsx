@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const categoryName = typeof product.category === 'object' ? product.category.name : 'Tech';
 
   return (
-    <div className="group flex flex-col relative bg-white overflow-hidden transition-all duration-300">
+    <div className="group flex flex-col relative bg-white border border-transparent hover:border-outline-variant hover:shadow-editorial p-3 transition-all duration-300 animate-fade-in-up">
       <Link href={`/products/${product._id}`} className="block relative w-full aspect-[3/4] bg-surface-dim overflow-hidden">
         <img
           src={product.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
@@ -53,7 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Wishlist Toggle Button overlay */}
         <button
           onClick={handleToggleWishlist}
-          className="absolute top-4 right-4 bg-white/85 hover:bg-white text-primary p-2 transition-all duration-200 active:scale-90"
+          className="absolute top-4 right-4 bg-white/85 hover:bg-white text-primary p-2 transition-all duration-200 active:scale-90 z-10"
         >
           <span className={`material-symbols-outlined text-[20px] ${isFavorite ? 'text-red-600 font-variation-fill-1' : ''}`} style={isFavorite ? { fontVariationSettings: "'FILL' 1" } : {}}>
             favorite
@@ -76,7 +76,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <span className="text-[10px] font-bold uppercase tracking-widest text-outline mb-1">
           {categoryName}
         </span>
-        <Link href={`/products/${product._id}`} className="text-sm font-semibold text-primary hover:opacity-80 transition-opacity truncate w-full mb-1">
+        <Link href={`/products/${product._id}`} className="text-sm font-semibold text-primary hover:text-accent transition-colors truncate w-full mb-1">
           {product.name}
         </Link>
         <div className="flex gap-2 items-center mb-4">
@@ -89,7 +89,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <button
           disabled={product.stock <= 0}
           onClick={handleAddToCart}
-          className="w-full bg-primary disabled:bg-outline text-white py-3 text-xs font-bold uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all"
+          className="w-full bg-primary disabled:bg-outline text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#fb56c1] hover:text-white active:scale-95 transition-all shadow-sm"
         >
           {product.stock <= 0 ? 'Out of stock' : 'Add to bag'}
         </button>
