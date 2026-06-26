@@ -37,9 +37,10 @@ const Footer: React.FC = () => {
           <h3 className="text-xs font-bold uppercase tracking-widest text-outline-variant mb-6">Shop</h3>
           <ul className="space-y-3 text-sm font-semibold">
             <li><Link href="/products" className="hover:text-outline-variant transition-colors">All Products</Link></li>
-            <li><Link href="/products?category=phones-mobile" className="hover:text-outline-variant transition-colors">Phones & Mobile</Link></li>
-            <li><Link href="/products?category=headphones-audio" className="hover:text-outline-variant transition-colors">Headphones & Audio</Link></li>
-            <li><Link href="/products?category=workstations-inputs" className="hover:text-outline-variant transition-colors">Workstations</Link></li>
+            <li><Link href="/products?category=mens-clothing" className="hover:text-outline-variant transition-colors">Men's Clothing</Link></li>
+            <li><Link href="/products?category=womens-clothing" className="hover:text-outline-variant transition-colors">Women's Clothing</Link></li>
+            <li><Link href="/products?category=shoes" className="hover:text-outline-variant transition-colors">Shoes & Footwear</Link></li>
+            <li><Link href="/products?category=accessories" className="hover:text-outline-variant transition-colors">Accessories</Link></li>
           </ul>
         </div>
 

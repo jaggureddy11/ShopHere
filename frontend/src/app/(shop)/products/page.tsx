@@ -23,6 +23,7 @@ function ProductsContent() {
   const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || '');
   const [sort, setSort] = useState(searchParams.get('sort') || 'newest');
   const [page, setPage] = useState(Number(searchParams.get('page')) || 1);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
   
   const search = searchParams.get('search') || '';
 
@@ -146,27 +147,38 @@ function ProductsContent() {
           </p>
         </div>
 
-        <div className="flex gap-4 items-center">
-          <label htmlFor="sort" className="text-xs font-bold uppercase tracking-widest">
-            Sort By:
-          </label>
-          <select
-            id="sort"
-            className="border border-outline-variant p-2 text-xs font-semibold uppercase bg-white outline-none rounded-none cursor-pointer"
-            value={sort}
-            onChange={(e) => updateURL({ sort: e.target.value })}
+        <div className="flex flex-wrap gap-4 items-center w-full md:w-auto justify-between md:justify-end">
+          {/* Filters Toggle Button for mobile/tablet */}
+          <button 
+            onClick={() => setShowMobileFilters(!showMobileFilters)}
+            className="lg:hidden flex items-center gap-2 border border-outline-variant px-4 py-2 text-xs font-bold uppercase tracking-widest bg-white hover:bg-surface-dim transition-colors active:scale-95"
           >
-            <option value="newest">New Arrivals</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="rating">Rating</option>
-          </select>
+            <span className="material-symbols-outlined text-[18px]">tune</span>
+            {showMobileFilters ? 'Hide Filters' : 'Show Filters'}
+          </button>
+
+          <div className="flex gap-3 items-center">
+            <label htmlFor="sort" className="text-xs font-bold uppercase tracking-widest">
+              Sort By:
+            </label>
+            <select
+              id="sort"
+              className="border border-outline-variant p-2 text-xs font-semibold uppercase bg-white outline-none rounded-none cursor-pointer"
+              value={sort}
+              onChange={(e) => updateURL({ sort: e.target.value })}
+            >
+              <option value="newest">New Arrivals</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Sidebar Filters */}
-        <aside className="w-full lg:w-64 shrink-0 space-y-8">
+        <aside className={`w-full lg:w-64 shrink-0 space-y-8 lg:block ${showMobileFilters ? 'block' : 'hidden'}`}>
           {/* Categories */}
           <div className="space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-widest border-b border-outline-variant pb-2">
