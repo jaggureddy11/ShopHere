@@ -4,9 +4,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Shop Here | High-End Tech Retail',
-  description: 'Curated innovation designed for the modern professional. High-performance devices met with unparalleled aesthetic precision.',
-  metadataBase: new URL('http://localhost:3003'),
+  title: 'ShopHere — Premium Fashion Store',
+  description: 'Discover premium fashion for Men, Women & Kids. Shop the latest trends in clothing, footwear, and accessories at ShopHere.',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3003'),
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
+  openGraph: {
+    title: 'ShopHere — Premium Fashion Store',
+    description: 'Discover premium fashion for Men, Women & Kids.',
+    images: ['/logo.png'],
+  },
 };
 
 export default function RootLayout({
