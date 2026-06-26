@@ -229,93 +229,86 @@ export default function HomePage() {
         )}
       </section>
 
-      {/* Premium Editorial Campaign Grid */}
-      <section className="py-24 px-6 md:px-16 bg-white max-w-[1440px] mx-auto border-t border-outline-variant/30">
-        {/* Elegant Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-xs font-semibold uppercase tracking-[0.35em] text-outline mb-3">
-            Seasonal Collections
+      {/* Premium Minimalist Lookbook Series (Zara/Prada Style) */}
+      <section className="py-28 px-6 md:px-16 bg-white max-w-[1440px] mx-auto border-t border-outline-variant/30">
+        {/* Editorial Header */}
+        <div className="flex flex-col items-start mb-20">
+          <span className="text-xs font-semibold uppercase tracking-[0.4em] text-outline mb-3">
+            LOOKBOOK SERIES
           </span>
           <h2 className="text-3xl md:text-5xl font-premium tracking-wide text-primary uppercase">
-            The Editorial Series
+            The Seasonal Campaigns
           </h2>
           <div className="w-12 h-[1px] bg-primary/30 mt-6" />
         </div>
 
-        {/* Asymmetrical Collection Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-auto lg:h-[650px] overflow-hidden">
+        {/* Staggered Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 items-start">
           
-          {/* Card 1: Tall / Featured (Left) - Takes 7 of 12 columns */}
-          <Link 
-            href="/products?category=womens-clothing"
-            className="group relative lg:col-span-7 h-[450px] lg:h-full overflow-hidden flex flex-col justify-end p-8 md:p-12 bg-surface-dim border border-outline-variant/20 shadow-md"
-          >
-            <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-[1000ms] ease-out group-hover:scale-105"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000')" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/90" />
-            <div className="relative z-10 text-white">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#fb56c1] block mb-2">01 / Vol. I</span>
-              <h3 className="text-2xl md:text-4xl font-premium tracking-wider uppercase mb-3">Womenswear Collection</h3>
-              <p className="text-xs md:text-sm text-white/80 font-medium tracking-wide max-w-md mb-6 leading-relaxed">
-                Breezy coordinates, minimal silhouettes, and refined tailoring designed for summer comfort.
-              </p>
-              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] border-b-2 border-white pb-1 group-hover:border-[#fb56c1] transition-colors">
-                Explore Editorial
-                <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+          {/* Column 1: Women */}
+          <Link href="/products?category=womens-clothing" className="group flex flex-col w-full cursor-pointer">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim mb-6">
+              <img 
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800" 
+                alt="Womenswear Lookbook" 
+                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-103"
+              />
+              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="flex flex-col items-start space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#fb56c1]">01 / Women's Vol. I</span>
+              <h3 className="text-lg font-premium tracking-wider uppercase text-primary">The Mediterranean Sun</h3>
+              <p className="text-xs text-outline leading-relaxed font-medium">Breezy coordinates and relaxed luxury tailoring.</p>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-primary/30 pb-0.5 group-hover:border-primary transition-colors pt-2">
+                Discover Lookbook
               </span>
             </div>
           </Link>
 
-          {/* Right Column Container - Takes 5 of 12 columns and splits into 2 stacked cards */}
-          <div className="lg:col-span-5 flex flex-col gap-8 h-full">
-            
-            {/* Card 2: Men's Clothing (Top Right) */}
-            <Link 
-              href="/products?category=mens-clothing"
-              className="group relative flex-1 h-[300px] lg:h-1/2 overflow-hidden flex flex-col justify-end p-8 bg-surface-dim border border-outline-variant/20 shadow-md"
-            >
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-[1000ms] ease-out group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800')" }}
+          {/* Column 2: Men (Staggered Down on desktop) */}
+          <Link href="/products?category=mens-clothing" className="group flex flex-col w-full cursor-pointer md:translate-y-12 lg:translate-y-16">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim mb-6">
+              <img 
+                src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800" 
+                alt="Menswear Lookbook" 
+                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-103"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/90" />
-              <div className="relative z-10 text-white">
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#ee5f73] block mb-2">02 / Vol. II</span>
-                <h3 className="text-xl md:text-2xl font-premium tracking-wider uppercase mb-2">Menswear Essentials</h3>
-                <p className="text-xs text-white/70 font-medium tracking-wide mb-4">Flat 20% off selected smart-casual outerwear.</p>
-                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] border-b border-white pb-1 group-hover:border-[#ee5f73] transition-colors">
-                  Shop Men
-                  <span className="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                </span>
-              </div>
-            </Link>
+              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="flex flex-col items-start space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ee5f73]">02 / Men's Vol. II</span>
+              <h3 className="text-lg font-premium tracking-wider uppercase text-primary">Sharp Streetwear</h3>
+              <p className="text-xs text-outline leading-relaxed font-medium">Modern formal outerwear and refined coordinates.</p>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-primary/30 pb-0.5 group-hover:border-primary transition-colors pt-2">
+                Discover Lookbook
+              </span>
+            </div>
+          </Link>
 
-            {/* Card 3: Accessories (Bottom Right) */}
-            <Link 
-              href="/products?category=accessories"
-              className="group relative flex-1 h-[300px] lg:h-1/2 overflow-hidden flex flex-col justify-end p-8 bg-surface-dim border border-outline-variant/20 shadow-md"
-            >
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-[1000ms] ease-out group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=800')" }}
+          {/* Column 3: Accessories */}
+          <Link href="/products?category=accessories" className="group flex flex-col w-full cursor-pointer">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim mb-6">
+              <img 
+                src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=800" 
+                alt="Accessories Lookbook" 
+                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-103"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/90" />
-              <div className="relative z-10 text-white">
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#f59e0b] block mb-2">03 / Vol. III</span>
-                <h3 className="text-xl md:text-2xl font-premium tracking-wider uppercase mb-2">Luxury Accessories</h3>
-                <p className="text-xs text-white/70 font-medium tracking-wide mb-4">Up to 50% off timeless leather articles & timepieces.</p>
-                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] border-b border-white pb-1 group-hover:border-[#f59e0b] transition-colors">
-                  Shop Accessories
-                  <span className="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
-                </span>
-              </div>
-            </Link>
-
-          </div>
+              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="flex flex-col items-start space-y-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#f59e0b]">03 / Accessories Vol. III</span>
+              <h3 className="text-lg font-premium tracking-wider uppercase text-primary">Minimal Details</h3>
+              <p className="text-xs text-outline leading-relaxed font-medium">Premium leather goods, hats, and timepieces.</p>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] border-b border-primary/30 pb-0.5 group-hover:border-primary transition-colors pt-2">
+                Discover Lookbook
+              </span>
+            </div>
+          </Link>
 
         </div>
+        
+        {/* Spacer for staggered alignment recovery on lower siblings */}
+        <div className="h-0 md:h-12 lg:h-16" />
       </section>
 
       {/* Featured Products Listing */}
