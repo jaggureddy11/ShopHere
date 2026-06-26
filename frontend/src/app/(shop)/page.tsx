@@ -11,7 +11,6 @@ export default function HomePage() {
   const [featuredProducts, setFeaturedProducts] = useState<IProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
-  const [activeCampaignIndex, setActiveCampaignIndex] = useState(0);
 
   // Set mounted flag to prevent SSR/hydration mismatch
   useEffect(() => {
@@ -230,130 +229,88 @@ export default function HomePage() {
         )}
       </section>
 
-      {/* Premium Interactive Editorial Showcase (Zara/Prada Style) */}
+      {/* Premium Floating Editorial Cards (Zara/Prada Style) */}
       <section className="py-24 px-6 md:px-16 bg-white max-w-[1440px] mx-auto border-t border-outline-variant/30">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Section Header */}
+        <div className="flex flex-col items-center text-center mb-20">
+          <span className="text-xs font-semibold uppercase tracking-[0.35em] text-outline mb-3">
+            SEASONAL EDITORIALS
+          </span>
+          <h2 className="text-3xl md:text-5xl font-premium tracking-wide text-primary uppercase">
+            The Campaigns
+          </h2>
+          <div className="w-12 h-[1px] bg-primary/30 mt-6" />
+        </div>
+
+        {/* 3-Column Floating Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           
-          {/* Left Column: Interactive Image Frame (Takes 7 of 12 columns) */}
-          <div className="lg:col-span-7 w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] relative overflow-hidden bg-surface-dim shadow-xl border border-outline-variant/10">
-            {/* Womenswear Image */}
-            <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeCampaignIndex === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+          {/* Card 1: Women */}
+          <Link href="/products?category=womens-clothing" className="group relative flex flex-col items-center cursor-pointer pb-8">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200" 
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800" 
                 alt="Womenswear Campaign" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-            {/* Menswear Image */}
-            <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeCampaignIndex === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+            
+            {/* Floating Info Box */}
+            <div className="relative z-10 -mt-12 w-[85%] bg-white p-6 border border-outline-variant/20 shadow-xl text-center transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#fb56c1] block mb-2">Vol. I</span>
+              <h3 className="text-lg font-premium tracking-wider uppercase text-primary mb-3">Womenswear</h3>
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] border-b border-primary/30 pb-0.5 group-hover:border-[#fb56c1] transition-colors">
+                Discover
+                <span className="material-symbols-outlined text-[12px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+              </span>
+            </div>
+          </Link>
+
+          {/* Card 2: Men */}
+          <Link href="/products?category=mens-clothing" className="group relative flex flex-col items-center cursor-pointer pb-8">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=1200" 
+                src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800" 
                 alt="Menswear Campaign" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-            {/* Accessories Image */}
-            <div className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeCampaignIndex === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+            
+            {/* Floating Info Box */}
+            <div className="relative z-10 -mt-12 w-[85%] bg-white p-6 border border-outline-variant/20 shadow-xl text-center transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ee5f73] block mb-2">Vol. II</span>
+              <h3 className="text-lg font-premium tracking-wider uppercase text-primary mb-3">Menswear</h3>
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] border-b border-primary/30 pb-0.5 group-hover:border-[#ee5f73] transition-colors">
+                Discover
+                <span className="material-symbols-outlined text-[12px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+              </span>
+            </div>
+          </Link>
+
+          {/* Card 3: Accessories */}
+          <Link href="/products?category=accessories" className="group relative flex flex-col items-center cursor-pointer pb-8">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-dim shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=1200" 
+                src="https://images.unsplash.com/photo-1509319117193-57bab727e09d?w=800" 
                 alt="Accessories Campaign" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-            {/* Ambient Dark Overlay */}
-            <div className="absolute inset-0 bg-black/10 z-20 pointer-events-none" />
-          </div>
-
-          {/* Right Column: Menu Accordion list (Takes 5 of 12 columns) */}
-          <div className="lg:col-span-5 flex flex-col justify-center h-full">
-            <span className="text-xs font-semibold uppercase tracking-[0.4em] text-outline mb-4">
-              EDITORIAL SERIES
-            </span>
-            <h2 className="text-3xl md:text-5xl font-premium tracking-wide text-primary uppercase mb-12">
-              The Seasonal <br /> Campaigns
-            </h2>
-
-            <div className="flex flex-col gap-6">
-              {/* Category 1 */}
-              <div 
-                onMouseEnter={() => setActiveCampaignIndex(0)}
-                onClick={() => setActiveCampaignIndex(0)}
-                className="flex flex-col cursor-pointer border-b border-outline-variant/30 pb-6 group"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <h3 className={`text-xl font-premium tracking-wider uppercase transition-colors duration-300 ${activeCampaignIndex === 0 ? 'text-[#fb56c1] font-bold' : 'text-primary group-hover:text-primary/70'}`}>
-                    01 / Womenswear
-                  </h3>
-                  <span className={`material-symbols-outlined text-[20px] transition-transform duration-300 ${activeCampaignIndex === 0 ? 'rotate-90 text-[#fb56c1]' : 'text-outline group-hover:translate-x-1'}`}>
-                    arrow_right_alt
-                  </span>
-                </div>
-                
-                {/* Collapsible Details */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeCampaignIndex === 0 ? 'max-h-24 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xs text-outline leading-relaxed max-w-sm mb-4">
-                    Discover breezy coordinates, relaxed silhouettes, and luxury linen articles tailored for summer comfort and styling.
-                  </p>
-                  <Link href="/products?category=womens-clothing" className="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-[#fb56c1] border-b border-[#fb56c1]/30 hover:border-[#fb56c1] pb-0.5">
-                    Explore Collection
-                  </Link>
-                </div>
-              </div>
-
-              {/* Category 2 */}
-              <div 
-                onMouseEnter={() => setActiveCampaignIndex(1)}
-                onClick={() => setActiveCampaignIndex(1)}
-                className="flex flex-col cursor-pointer border-b border-outline-variant/30 pb-6 group"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <h3 className={`text-xl font-premium tracking-wider uppercase transition-colors duration-300 ${activeCampaignIndex === 1 ? 'text-[#ee5f73] font-bold' : 'text-primary group-hover:text-primary/70'}`}>
-                    02 / Menswear
-                  </h3>
-                  <span className={`material-symbols-outlined text-[20px] transition-transform duration-300 ${activeCampaignIndex === 1 ? 'rotate-90 text-[#ee5f73]' : 'text-outline group-hover:translate-x-1'}`}>
-                    arrow_right_alt
-                  </span>
-                </div>
-                
-                {/* Collapsible Details */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeCampaignIndex === 1 ? 'max-h-24 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xs text-outline leading-relaxed max-w-sm mb-4">
-                    Modern smart-casual jackets, structural trousers, and cotton shirts curated for the high-end contemporary closet.
-                  </p>
-                  <Link href="/products?category=mens-clothing" className="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-[#ee5f73] border-b border-[#ee5f73]/30 hover:border-[#ee5f73] pb-0.5">
-                    Explore Collection
-                  </Link>
-                </div>
-              </div>
-
-              {/* Category 3 */}
-              <div 
-                onMouseEnter={() => setActiveCampaignIndex(2)}
-                onClick={() => setActiveCampaignIndex(2)}
-                className="flex flex-col cursor-pointer border-b border-outline-variant/30 pb-6 group"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <h3 className={`text-xl font-premium tracking-wider uppercase transition-colors duration-300 ${activeCampaignIndex === 2 ? 'text-[#f59e0b] font-bold' : 'text-primary group-hover:text-primary/70'}`}>
-                    03 / Accessories
-                  </h3>
-                  <span className={`material-symbols-outlined text-[20px] transition-transform duration-300 ${activeCampaignIndex === 2 ? 'rotate-90 text-[#f59e0b]' : 'text-outline group-hover:translate-x-1'}`}>
-                    arrow_right_alt
-                  </span>
-                </div>
-                
-                {/* Collapsible Details */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeCampaignIndex === 2 ? 'max-h-24 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xs text-outline leading-relaxed max-w-sm mb-4">
-                    Timeless leather articles, refined watches, signature eyewear, and caps designed to articulate clean aesthetic details.
-                  </p>
-                  <Link href="/products?category=accessories" className="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-[#f59e0b] border-b border-[#f59e0b]/30 hover:border-[#f59e0b] pb-0.5">
-                    Explore Collection
-                  </Link>
-                </div>
-              </div>
+            
+            {/* Floating Info Box */}
+            <div className="relative z-10 -mt-12 w-[85%] bg-white p-6 border border-outline-variant/20 shadow-xl text-center transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#f59e0b] block mb-2">Vol. III</span>
+              <h3 className="text-lg font-premium tracking-wider uppercase text-primary mb-3">Accessories</h3>
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.2em] border-b border-primary/30 pb-0.5 group-hover:border-[#f59e0b] transition-colors">
+                Discover
+                <span className="material-symbols-outlined text-[12px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+              </span>
             </div>
+          </Link>
 
-          </div>
         </div>
       </section>
 
