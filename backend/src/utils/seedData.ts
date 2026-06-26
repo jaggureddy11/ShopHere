@@ -62,19 +62,19 @@ const seed = async () => {
         name: "Men's Clothing",
         slug: 'mens-clothing',
         description: 'Premium collection of mens apparel',
-        image: 'https://images.unsplash.com/photo-1552062407-c551eeda4921?w=500&h=500&fit=crop'
+        image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=500&h=500&fit=crop'
       },
       {
         name: "Women's Clothing",
         slug: 'womens-clothing',
         description: 'Stylish collection of womens apparel',
-        image: 'https://images.unsplash.com/photo-1595777707802-51b4c3a5aeef?w=500&h=500&fit=crop'
+        image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&h=500&fit=crop'
       },
       {
         name: "Kids",
         slug: 'kids',
         description: 'Comfortable and trendy kids clothing',
-        image: 'https://images.unsplash.com/photo-1503884917175-897afba6ff30?w=500&h=500&fit=crop'
+        image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&h=500&fit=crop'
       },
       {
         name: "Shoes",
@@ -92,7 +92,7 @@ const seed = async () => {
         name: "Sportswear",
         slug: 'sportswear',
         description: 'Active and performance wear',
-        image: 'https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop'
+        image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop'
       }
     ];
 
@@ -127,7 +127,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "T-Shirts",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1548260cc-2151caa16fd9?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 102
       },
@@ -139,7 +139,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "T-Shirts",
         stock: 95,
-        images: ["https://images.unsplash.com/photo-1576959375944-66c28c4dc548?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 76
       },
@@ -151,7 +151,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "T-Shirts",
         stock: 200,
-        images: ["https://images.unsplash.com/photo-1503272584311-c55b6b142e11?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1488161628813-04466f872be2?w=500&h=500&fit=crop"],
         rating: 4.4,
         reviewsCount: 145
       },
@@ -163,7 +163,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "T-Shirts",
         stock: 110,
-        images: ["https://images.unsplash.com/photo-1591883088099-43e2a9d0e657?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 203
       },
@@ -177,7 +177,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Shirts",
         stock: 85,
-        images: ["https://images.unsplash.com/photo-1596178065887-8f3341c3f86b?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1488161628813-04466f872be2?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 156
       },
@@ -189,7 +189,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Shirts",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1598070330210-20f1f9c7a9f0?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 98
       },
@@ -201,7 +201,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Shirts",
         stock: 95,
-        images: ["https://images.unsplash.com/photo-1559856788-ef16ae64d3c2?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 112
       },
@@ -213,7 +213,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Shirts",
         stock: 110,
-        images: ["https://images.unsplash.com/photo-1608531476202-87c6de88c869?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=500&h=500&fit=crop"],
         rating: 4.4,
         reviewsCount: 87
       },
@@ -239,7 +239,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Jeans",
         stock: 180,
-        images: ["https://images.unsplash.com/photo-1542272604-787c62d465d1?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 267
       },
@@ -251,7 +251,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Jeans",
         stock: 160,
-        images: ["https://images.unsplash.com/photo-1542260408-7cffcfa268e0?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 189
       },
@@ -263,7 +263,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Jeans",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1604829a85500-4c17d331c77c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 143
       },
@@ -275,7 +275,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Jeans",
         stock: 95,
-        images: ["https://images.unsplash.com/photo-1542374318-f83c18e61dda?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 156
       },
@@ -287,7 +287,7 @@ const seed = async () => {
         category: catMap.get('mens-clothing')!,
         subcategory: "Jeans",
         stock: 140,
-        images: ["https://images.unsplash.com/photo-1543590149-8e0302a4d310?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=500&fit=crop"],
         rating: 4.4,
         reviewsCount: 112
       },
@@ -301,7 +301,7 @@ const seed = async () => {
         category: catMap.get('womens-clothing')!,
         subcategory: "Dresses",
         stock: 140,
-        images: ["https://images.unsplash.com/photo-1572804419425-e33eb04f0ce7?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 178
       },
@@ -313,7 +313,7 @@ const seed = async () => {
         category: catMap.get('womens-clothing')!,
         subcategory: "Dresses",
         stock: 65,
-        images: ["https://images.unsplash.com/photo-1595777707802-51b4c3a5aeef?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&h=500&fit=crop"],
         rating: 4.9,
         reviewsCount: 234
       },
@@ -349,7 +349,7 @@ const seed = async () => {
         category: catMap.get('womens-clothing')!,
         subcategory: "Dresses",
         stock: 85,
-        images: ["https://images.unsplash.com/photo-1566683857616-ec6b9f7c8a0f?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&h=500&fit=crop"],
         rating: 4.4,
         reviewsCount: 132
       },
@@ -375,7 +375,7 @@ const seed = async () => {
         category: catMap.get('womens-clothing')!,
         subcategory: "Tops",
         stock: 95,
-        images: ["https://images.unsplash.com/photo-1548260cc-2151caa16fd9?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1505022610485-0249ba5b3675?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 143
       },
@@ -387,7 +387,7 @@ const seed = async () => {
         category: catMap.get('womens-clothing')!,
         subcategory: "Tops",
         stock: 160,
-        images: ["https://images.unsplash.com/photo-1590080876186-e41d1b4a59eb?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 189
       },
@@ -399,7 +399,7 @@ const seed = async () => {
         category: catMap.get('womens-clothing')!,
         subcategory: "Tops",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1592652622496-92e567bde722?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 156
       },
@@ -461,7 +461,7 @@ const seed = async () => {
         category: catMap.get('kids')!,
         subcategory: "Shorts",
         stock: 105,
-        images: ["https://images.unsplash.com/photo-1519238383828-11df59a44f6b?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=500&h=500&fit=crop"],
         rating: 4.4,
         reviewsCount: 29
       },
@@ -499,7 +499,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Sneakers",
         stock: 145,
-        images: ["https://images.unsplash.com/photo-1595348440529-576f5c6238cc?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 267
       },
@@ -523,7 +523,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Sneakers",
         stock: 190,
-        images: ["https://images.unsplash.com/photo-1560343676-04071c5f467b?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 189
       },
@@ -549,7 +549,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Formal",
         stock: 85,
-        images: ["https://images.unsplash.com/photo-1543163521-9145f931371e?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 178
       },
@@ -561,7 +561,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Formal",
         stock: 110,
-        images: ["https://images.unsplash.com/photo-1543163521-9145f931371e?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 145
       },
@@ -573,7 +573,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Formal",
         stock: 70,
-        images: ["https://images.unsplash.com/photo-1543163521-9145f931371e?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 112
       },
@@ -585,7 +585,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Formal",
         stock: 95,
-        images: ["https://images.unsplash.com/photo-1543163521-9145f931371e?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 156
       },
@@ -597,7 +597,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Formal",
         stock: 80,
-        images: ["https://images.unsplash.com/photo-1543163521-9145f931371e?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 189
       },
@@ -611,7 +611,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Casual",
         stock: 200,
-        images: ["https://images.unsplash.com/photo-1540034519387-ed03d5e7a840?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 234
       },
@@ -623,7 +623,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Casual",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1540034519387-ed03d5e7a840?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 167
       },
@@ -635,7 +635,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Casual",
         stock: 140,
-        images: ["https://images.unsplash.com/photo-1540034519387-ed03d5e7a840?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 145
       },
@@ -647,7 +647,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Casual",
         stock: 300,
-        images: ["https://images.unsplash.com/photo-1540034519387-ed03d5e7a840?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"],
         rating: 4.4,
         reviewsCount: 312
       },
@@ -659,7 +659,7 @@ const seed = async () => {
         category: catMap.get('shoes')!,
         subcategory: "Casual",
         stock: 110,
-        images: ["https://images.unsplash.com/photo-1540034519387-ed03d5e7a840?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 134
       },
@@ -709,7 +709,7 @@ const seed = async () => {
         category: catMap.get('accessories')!,
         subcategory: "Scarves",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1559856788-ef16ae64d3c2?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 98
       },
@@ -721,7 +721,7 @@ const seed = async () => {
         category: catMap.get('accessories')!,
         subcategory: "Scarves",
         stock: 75,
-        images: ["https://images.unsplash.com/photo-1559856788-ef16ae64d3c2?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 112
       },
@@ -795,7 +795,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 150,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 234
       },
@@ -807,7 +807,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 120,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 267
       },
@@ -819,7 +819,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 130,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 189
       },
@@ -831,7 +831,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 140,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 156
       },
@@ -843,7 +843,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 110,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 145
       },
@@ -855,7 +855,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 95,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 178
       },
@@ -867,7 +867,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Activewear",
         stock: 115,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.6,
         reviewsCount: 134
       },
@@ -879,7 +879,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Sports",
         stock: 80,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.7,
         reviewsCount: 112
       },
@@ -891,7 +891,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Sports",
         stock: 170,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.5,
         reviewsCount: 167
       },
@@ -903,7 +903,7 @@ const seed = async () => {
         category: catMap.get('sportswear')!,
         subcategory: "Sports",
         stock: 75,
-        images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
+        images: ["https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 145
       },
