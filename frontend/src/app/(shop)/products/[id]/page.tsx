@@ -178,6 +178,7 @@ export default function ProductDetailsPage() {
             src={product.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
             alt={product.name}
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
           {product.stock <= 0 && (
             <span className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider">

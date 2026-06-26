@@ -92,6 +92,7 @@ export default function CartPage() {
                         src={item.product.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
                         alt={item.product.name}
                         className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
                       />
                     </Link>
                     <div className="flex flex-col justify-start">
