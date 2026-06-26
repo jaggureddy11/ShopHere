@@ -174,11 +174,11 @@ export default function OrderDetailsPage() {
                         {item.product.name}
                       </Link>
                       <div className="text-xs text-outline font-semibold uppercase tracking-wider mt-1">
-                        Qty: {item.quantity} | Unit Price: ${item.price}
+                        Qty: {item.quantity} | Unit Price: ₹{item.price}
                       </div>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-primary">${item.price * item.quantity}</span>
+                  <span className="text-sm font-bold text-primary">₹{item.price * item.quantity}</span>
                 </div>
               ))}
             </div>
@@ -236,7 +236,7 @@ export default function OrderDetailsPage() {
 
               <div className="border-t border-outline-variant pt-3 mt-3 flex justify-between text-xs font-bold text-primary">
                 <span>Amount Paid</span>
-                <span>${order.totalPrice}</span>
+                <span>₹{order.totalPrice}</span>
               </div>
             </div>
           </div>

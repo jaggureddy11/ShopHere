@@ -123,7 +123,7 @@ export default function AddProductPage() {
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
             <label htmlFor="price" className="block text-xs font-bold uppercase tracking-widest">
-              Standard Price ($) *
+              Standard Price (₹) *
             </label>
             <input
               id="price"
@@ -138,7 +138,7 @@ export default function AddProductPage() {
           </div>
           <div className="space-y-1">
             <label htmlFor="discount" className="block text-xs font-bold uppercase tracking-widest">
-              Discount Price ($)
+              Discount Price (₹)
             </label>
             <input
               id="discount"

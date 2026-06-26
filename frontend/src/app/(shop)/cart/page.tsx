@@ -26,8 +26,8 @@ export default function CartPage() {
   }
 
   const subtotal = getCartSubtotal();
-  const shippingThreshold = 150;
-  const shippingFee = subtotal >= shippingThreshold || subtotal === 0 ? 0 : 15;
+  const shippingThreshold = 5000;
+  const shippingFee = subtotal >= shippingThreshold || subtotal === 0 ? 0 : 150;
   const estimatedTax = Number((subtotal * 0.08).toFixed(2));
   const orderTotal = Number((subtotal + shippingFee + estimatedTax).toFixed(2));
 
@@ -136,7 +136,7 @@ export default function CartPage() {
                     <span className="md:hidden text-xs text-outline font-semibold uppercase tracking-wider block mb-1">
                       Price:
                     </span>
-                    ${activePrice}
+                    ₹{activePrice}
                   </div>
 
                   {/* Total price */}
@@ -144,7 +144,7 @@ export default function CartPage() {
                     <span className="md:hidden text-xs text-outline font-semibold uppercase tracking-wider block mb-1">
                       Total:
                     </span>
-                    ${itemTotal}
+                    ₹{itemTotal}
                   </div>
                 </div>
               );
@@ -179,27 +179,27 @@ export default function CartPage() {
           <div className="space-y-4 text-xs font-semibold text-outline uppercase tracking-wider">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span className="text-primary font-bold">${subtotal}</span>
+              <span className="text-primary font-bold">₹{subtotal}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping</span>
               <span className="text-primary font-bold">
-                {shippingFee === 0 ? 'Free' : `$${shippingFee}`}
+                {shippingFee === 0 ? 'Free' : `₹${shippingFee}`}
               </span>
             </div>
             {shippingFee > 0 && (
               <p className="text-[9px] text-accent font-bold normal-case text-right">
-                Spend ${shippingThreshold - subtotal} more for free shipping
+                Spend ₹{shippingThreshold - subtotal} more for free shipping
               </p>
             )}
             <div className="flex justify-between">
               <span>Estimated Tax (8%)</span>
-              <span className="text-primary font-bold">${estimatedTax}</span>
+              <span className="text-primary font-bold">₹{estimatedTax}</span>
             </div>
 
             <div className="border-t border-outline-variant pt-4 mt-4 flex justify-between text-sm font-bold text-primary">
               <span>Total Price</span>
-              <span>${orderTotal}</span>
+              <span>₹{orderTotal}</span>
             </div>
           </div>
 

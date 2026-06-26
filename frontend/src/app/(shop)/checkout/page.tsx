@@ -68,7 +68,7 @@ export default function CheckoutPage() {
   }
 
   const subtotal = getCartSubtotal();
-  const shippingFee = subtotal >= 150 ? 0 : 15;
+  const shippingFee = subtotal >= 5000 ? 0 : 150;
   const estimatedTax = Number((subtotal * 0.08).toFixed(2));
   const orderTotal = Number((subtotal + shippingFee + estimatedTax).toFixed(2));
 
@@ -531,7 +531,7 @@ export default function CheckoutPage() {
                   disabled={submitting || showNewAddressForm}
                   className="w-full bg-primary disabled:bg-outline text-white py-4 text-xs font-bold uppercase tracking-widest hover:opacity-95 active:scale-95 transition-all rounded-none text-center"
                 >
-                  {submitting ? 'Processing Order...' : `Place Order • $${orderTotal}`}
+                  {submitting ? 'Processing Order...' : `Place Order • ₹${orderTotal}`}
                 </button>
               </div>
             </form>
@@ -563,7 +563,7 @@ export default function CheckoutPage() {
                       <div className="text-outline">Qty: {item.quantity}</div>
                     </div>
                   </div>
-                  <span className="text-xs font-bold">${activePrice * item.quantity}</span>
+                  <span className="text-xs font-bold">₹{activePrice * item.quantity}</span>
                 </div>
               );
             })}
@@ -572,19 +572,19 @@ export default function CheckoutPage() {
           <div className="space-y-3 text-[10px] font-bold text-outline uppercase tracking-wider border-t border-outline-variant pt-4">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span className="text-primary">${subtotal}</span>
+              <span className="text-primary">₹{subtotal}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping</span>
-              <span>{shippingFee === 0 ? 'Free' : `$${shippingFee}`}</span>
+              <span>{shippingFee === 0 ? 'Free' : `₹${shippingFee}`}</span>
             </div>
             <div className="flex justify-between">
               <span>Estimated Tax (8%)</span>
-              <span className="text-primary">${estimatedTax}</span>
+              <span className="text-primary">₹{estimatedTax}</span>
             </div>
             <div className="border-t border-outline-variant pt-3 mt-3 flex justify-between text-xs font-bold text-primary">
               <span>Total Price</span>
-              <span>${orderTotal}</span>
+              <span>₹{orderTotal}</span>
             </div>
           </div>
         </div>

@@ -511,7 +511,7 @@ export default function HomePage() {
             <span className="material-symbols-outlined text-[#ee5f73] text-4xl shrink-0">local_shipping</span>
             <div>
               <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-1">Express Delivery</h3>
-              <p className="text-xs text-outline font-medium">Free shipping on all catalog items over $150.</p>
+              <p className="text-xs text-outline font-medium">Free shipping on all catalog items over ₹5,000.</p>
             </div>
           </div>
           <div className="flex items-center gap-4 p-4 border border-outline-variant shadow-sm transition-transform duration-300 hover:-translate-y-1">

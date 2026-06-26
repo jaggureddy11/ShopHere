@@ -207,9 +207,9 @@ export default function ProductDetailsPage() {
 
           {/* Pricing */}
           <div className="flex gap-4 items-center mb-8">
-            <span className="text-2xl font-black text-primary">${activePrice}</span>
+            <span className="text-2xl font-black text-primary">₹{activePrice}</span>
             {product.discountPrice && (
-              <span className="text-base text-outline line-through">${product.price}</span>
+              <span className="text-base text-outline line-through">₹{product.price}</span>
             )}
           </div>
 

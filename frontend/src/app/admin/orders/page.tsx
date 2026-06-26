@@ -167,7 +167,7 @@ export default function AdminOrderManagementPage() {
 
                     {/* Price */}
                     <td className="py-4 text-right font-bold text-primary">
-                      ${ord.totalPrice}
+                      ₹{ord.totalPrice}
                     </td>
 
                     {/* Payment status */}

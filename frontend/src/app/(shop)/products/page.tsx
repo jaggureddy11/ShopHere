@@ -251,7 +251,7 @@ function ProductsContent() {
           {/* Price Range */}
           <div className="space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-widest border-b border-outline-variant pb-2">
-              Price Range ($)
+              Price Range (₹)
             </h3>
             <div className="flex gap-2 items-center">
               <input

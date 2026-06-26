@@ -140,7 +140,7 @@ export default function AdminProductManagementPage() {
 
                     {/* Price */}
                     <td className="py-3 text-right font-bold text-primary">
-                      ${p.discountPrice || p.price}
+                      ₹{p.discountPrice || p.price}
                     </td>
 
                     {/* Stock */}

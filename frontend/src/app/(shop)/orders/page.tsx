@@ -103,7 +103,7 @@ export default function OrderHistoryPage() {
                 {/* Total Price */}
                 <div className="col-span-12 md:col-span-2 text-xs font-bold text-primary">
                   <span className="md:hidden text-outline-variant font-semibold">Total: </span>
-                  ${order.totalPrice}
+                  ₹{order.totalPrice}
                 </div>
 
                 {/* Payment Status */}
