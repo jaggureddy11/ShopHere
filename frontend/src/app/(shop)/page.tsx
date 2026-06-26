@@ -335,7 +335,7 @@ export default function HomePage() {
           </div>
 
           {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="animate-pulse bg-white p-4 h-[350px] flex flex-col justify-between">
                   <div className="bg-surface-high w-full h-[220px]" />
@@ -348,7 +348,7 @@ export default function HomePage() {
               ))}
             </div>
           ) : featuredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
               {featuredProducts.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}

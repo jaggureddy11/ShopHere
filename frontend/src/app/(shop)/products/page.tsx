@@ -286,7 +286,7 @@ function ProductsContent() {
         {/* Products Grid */}
         <div className="flex-1 space-y-12">
           {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div key={i} className="animate-pulse bg-white p-4 h-[350px] flex flex-col justify-between">
                   <div className="bg-surface-high w-full h-[220px]" />
@@ -300,7 +300,7 @@ function ProductsContent() {
             </div>
           ) : products.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                 {products.map((product) => (
                   <ProductCard key={product._id} product={product} />
                 ))}
