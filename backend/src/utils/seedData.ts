@@ -906,6 +906,151 @@ const seed = async () => {
         images: ["https://images.unsplash.com/photo-1506629082632-13f3b5e1df3c?w=500&h=500&fit=crop"],
         rating: 4.8,
         reviewsCount: 145
+      },
+      // MYNTRA SEEDED PRODUCTS
+      {
+        name: "Zeel Hooded Rain Suit",
+        description: "High-grade waterproof polyester hooded rain suit by Zeel. Designed with taped seams for absolute leakage protection during heavy downpours.",
+        price: 10.99,
+        discountPrice: 10.99,
+        category: catMap.get('mens-clothing')!,
+        subcategory: "Jackets",
+        stock: 120,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/MAY/10/7Lqxb8F5_67ad2bea62ff44aeb1115834e60a0fea.jpg"],
+        rating: 4.5,
+        reviewsCount: 38
+      },
+      {
+        name: "Zeel Hooded Rain Jacket",
+        description: "Backpack-friendly navy rain jacket with adjustable drawstring hood, secure zip closure, and dual side pockets. Designed by Zeel.",
+        price: 12.99,
+        discountPrice: 12.99,
+        category: catMap.get('mens-clothing')!,
+        subcategory: "Jackets",
+        stock: 85,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/29962775/2024/6/14/196862f9-6606-4d04-9f96-1c686b1ca02c1718347724465THEULTIMATEBACKPACK-FRIENDLYNAVYRAINCOAT1.jpg"],
+        rating: 4.4,
+        reviewsCount: 22
+      },
+      {
+        name: "Marks & Spencer Checked Lounge Shorts",
+        description: "Premium cotton checked lounge shorts by Marks & Spencer. Comfortable elasticated waistband with drawstring closure, perfect for relaxed weekends.",
+        price: 21.99,
+        discountPrice: 12.49,
+        category: catMap.get('womens-clothing')!,
+        subcategory: "Shorts",
+        stock: 110,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/30087230/2024/7/1/e3ad108c-8302-410d-84ec-dd231a4a2bdb1719846931761MarksSpencerWomenCheckedLoungeShorts1.jpg"],
+        rating: 4.7,
+        reviewsCount: 65
+      },
+      {
+        name: "Enamor Solid Lounge Shorts",
+        description: "Super soft stretch cotton cycling lounge shorts with a high-rise waist and comfortable waistband. Sourced from Enamor.",
+        price: 3.99,
+        discountPrice: 3.99,
+        category: catMap.get('womens-clothing')!,
+        subcategory: "Shorts",
+        stock: 150,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12302864/2024/6/22/9ca7d461-7532-4f23-a9ab-af06e4de2db31719037426110EnamorWomenHuggedFitStretchCottonCyclingShortswithSoftElasti1.jpg"],
+        rating: 4.3,
+        reviewsCount: 42
+      },
+      {
+        name: "You Got Plan B Solid Crop Top",
+        description: "Lightweight and breathable stretch knit cotton crop top, styled for active play and casual wear. Sourced from You Got Plan B.",
+        price: 7.99,
+        discountPrice: 5.99,
+        category: catMap.get('kids')!,
+        subcategory: "Boys & Girls Clothing",
+        stock: 90,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/DECEMBER/7/QwrdbBGt_617c82f82fd04785a8446d818c653203.jpg"],
+        rating: 4.2,
+        reviewsCount: 19
+      },
+      {
+        name: "Puma Essentials Logo Sweatpants",
+        description: "Classic Puma kids sweatpants featuring the iconic Puma logo print. Made from premium fleece-lined cotton for maximum comfort and style.",
+        price: 31.99,
+        discountPrice: 16.99,
+        category: catMap.get('kids')!,
+        subcategory: "Boys & Girls Clothing",
+        stock: 140,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2026/JUNE/11/NN0EhyOY_59274f966da3482b884c0f4c3a101b91.jpg"],
+        rating: 4.6,
+        reviewsCount: 54
+      },
+      {
+        name: "Skechers Go Run Consistent Shoes",
+        description: "High-performance running and training shoes by Skechers. Features responsive Ultra Go cushioning and a breathable mesh upper for supreme endurance.",
+        price: 69.99,
+        discountPrice: 47.99,
+        category: catMap.get('shoes')!,
+        subcategory: "Sneakers",
+        stock: 70,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/25921930/2023/12/26/370d28b2-9c41-4835-8c39-698e46ac1b541703577789788-Skechers-Men-Sports-Shoes-3621703577789563-1.jpg"],
+        rating: 4.8,
+        reviewsCount: 92
+      },
+      {
+        name: "Skechers Go Run Running Shoes",
+        description: "Lightweight Skechers running shoes with premium comfort insoles and shock-absorbing midsoles for daily runs and workout sessions.",
+        price: 74.99,
+        discountPrice: 41.99,
+        category: catMap.get('shoes')!,
+        subcategory: "Sneakers",
+        stock: 65,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/30591344/2024/8/29/bf3be5fb-15d5-4a7d-afe3-6fb30c9c54c51724915828230-SKECHERS-MEN-SHOE-4321724915827838-1.jpg"],
+        rating: 4.7,
+        reviewsCount: 88
+      },
+      {
+        name: "WROGN Men Analogue Watch",
+        description: "Sleek and classic silver-toned analogue watch by WROGN. Features a round watch dial, date display window, and premium stainless steel strap.",
+        price: 36.99,
+        discountPrice: 9.49,
+        category: catMap.get('accessories')!,
+        subcategory: "Watches",
+        stock: 95,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13036796/2021/1/6/bb6d18c9-39c1-4632-bc4a-f452606965ef1609906124788-WROGN-Men-Silver-Toned-Analogue-Watch-WRG00048A-802160990612-1.jpg"],
+        rating: 4.5,
+        reviewsCount: 76
+      },
+      {
+        name: "Puma Phase Kids Small Backpack",
+        description: "Compact kids backpack from Puma. Designed with a zippered main compartment, front pocket, and padded shoulder straps for school or travel.",
+        price: 22.99,
+        discountPrice: 9.99,
+        category: catMap.get('accessories')!,
+        subcategory: "Bags",
+        stock: 120,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/NOVEMBER/18/WZkmatkg_6fdb9b4a88be4da29c4d217c55f4a228.jpg"],
+        rating: 4.4,
+        reviewsCount: 47
+      },
+      {
+        name: "Nike Sportswear Club Men's Trouser",
+        description: "Classic athletic track trousers by Nike. Sourced from the Nike Sportswear Club series, built with soft brushed fleece for all-day cozy wear.",
+        price: 62.99,
+        discountPrice: 62.99,
+        category: catMap.get('sportswear')!,
+        subcategory: "Activewear",
+        stock: 80,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2026/MARCH/9/zrBbtZyS_ae1fb46b242e48fdb0ffa02396a35113.jpg"],
+        rating: 4.6,
+        reviewsCount: 61
+      },
+      {
+        name: "BMW MMS MT7 Track Jacket by Puma",
+        description: "BMW M Motorsport MT7 Track Jacket by Puma. Features iconic stripe accents, BMW team badges, and comfortable athletic fit.",
+        price: 112.99,
+        discountPrice: 67.99,
+        category: catMap.get('sportswear')!,
+        subcategory: "Activewear",
+        stock: 50,
+        images: ["https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/DECEMBER/29/ZZkjS6bo_1a3193f16ef3443a996e49a93b43a29a.jpg"],
+        rating: 4.8,
+        reviewsCount: 79
       }
     ];
 
