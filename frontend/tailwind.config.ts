@@ -40,7 +40,8 @@ const config: Config = {
         full: "0px", // Strict sharp style
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Bodoni Moda", "serif"],
+        serif: ["Bodoni Moda", "serif"],
       },
       boxShadow: {
         editorial: "0 30px 60px -12px rgba(0, 0, 0, 0.04)", // Soft ambient shadow
