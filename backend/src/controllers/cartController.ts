@@ -1,6 +1,19 @@
 import { Request, Response, NextFunction } from 'express';
-import Cart from '../models/Cart';
+import Cart, { ICart } from '../models/Cart';
 import Product from '../models/Product';
+import { HydratedDocument } from 'mongoose';
+
+// Helper: atomically gets or creates a cart for the given userId.
+// findOneAndUpdate with upsert:true + new:true always returns a document,
+// so we can safely cast to HydratedDocument<ICart> (non-null guaranteed).
+async function getOrCreateCart(userId: string): Promise<HydratedDocument<ICart>> {
+  const cart = await Cart.findOneAndUpdate(
+    { user: userId },
+    { $setOnInsert: { user: userId, items: [], expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) } },
+    { upsert: true, new: true }
+  );
+  return cart as HydratedDocument<ICart>;
+}
 
 export const getCart = async (
   req: Request,
@@ -13,18 +26,8 @@ export const getCart = async (
       return;
     }
 
-    let cart = await Cart.findOne({ user: req.user.id }).populate('items.product');
-
-    if (!cart) {
-      // Atomic upsert — safe against race conditions (no E11000 duplicate key)
-      // upsert:true + new:true guarantees a non-null document is returned
-      cart = (await Cart.findOneAndUpdate(
-        { user: req.user.id },
-        { $setOnInsert: { user: req.user.id, items: [], expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) } },
-        { upsert: true, new: true }
-      ))!;
-      await cart.populate('items.product');
-    }
+    const cart = await getOrCreateCart(req.user.id);
+    await cart.populate('items.product');
 
     res.status(200).json({ success: true, cart });
   } catch (error) {
@@ -55,26 +58,13 @@ export const addItemToCart = async (
       return;
     }
 
-    let cart = await Cart.findOne({ user: req.user.id });
+    const cart = await getOrCreateCart(req.user.id);
 
-    if (!cart) {
-      // Atomic upsert — avoids duplicate key on concurrent requests
-      // upsert:true + new:true guarantees a document is returned (non-null)
-      cart = (await Cart.findOneAndUpdate(
-        { user: req.user.id },
-        { $setOnInsert: { user: req.user.id, items: [], expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) } },
-        { upsert: true, new: true }
-      ))!;
-    }
-
-    // Check if item already in cart
     const itemIndex = cart.items.findIndex(item => item.product.toString() === productId);
 
     if (itemIndex > -1) {
-      // Update quantity
       cart.items[itemIndex].quantity += Number(quantity);
     } else {
-      // Add new item
       cart.items.push({
         product: productId,
         quantity: Number(quantity),
@@ -82,7 +72,6 @@ export const addItemToCart = async (
       });
     }
 
-    // Reset expiry date to 30 days from now
     cart.expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
     await cart.save();
 
@@ -103,7 +92,7 @@ export const updateCartItem = async (
       res.status(401).json({ success: false, message: 'Not authenticated.' });
       return;
     }
-    const { itemId } = req.params; // Item ID in items array or Product ID
+    const { itemId } = req.params;
     const { quantity } = req.body;
 
     if (quantity === undefined || Number(quantity) < 1) {
@@ -117,7 +106,6 @@ export const updateCartItem = async (
       return;
     }
 
-    // Find the item either by subdocument ID or by its product field
     const item = cart.items.find(
       i => i._id?.toString() === itemId || i.product.toString() === itemId
     );
