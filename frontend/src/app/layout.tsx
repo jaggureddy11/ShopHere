@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ToastContainer } from 'react-toastify';
+import SplashScreen from '@/components/SplashScreen';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
+        <SplashScreen />
         {children}
         <ToastContainer
           position="bottom-right"
