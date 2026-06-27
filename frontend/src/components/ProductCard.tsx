@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IProduct } from '../types';
 import { useCartStore } from '../store/cartStore';
 import { useWishlistStore } from '../store/wishlistStore';
@@ -43,11 +44,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="group flex flex-col relative bg-white border border-transparent hover:border-outline-variant hover:shadow-editorial p-3 transition-all duration-300 animate-fade-in-up">
       <Link href={`/products/${product._id}`} className="block relative w-full aspect-[3/4] bg-surface-dim overflow-hidden">
-        <img
+        <Image
           src={product.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="lazy"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 50vw, 25vw"
           referrerPolicy="no-referrer"
         />
         

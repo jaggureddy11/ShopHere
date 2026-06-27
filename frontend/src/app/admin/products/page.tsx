@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IProduct } from '@/types';
 import axiosInstance from '@/utils/axiosInstance';
 import { toast } from 'react-toastify';
@@ -119,11 +120,12 @@ export default function AdminProductManagementPage() {
                   <tr key={p._id} className="hover:bg-surface-dim transition-colors">
                     {/* Image */}
                     <td className="py-3 pr-4">
-                      <div className="w-10 aspect-[3/4] bg-surface-dim overflow-hidden">
-                        <img
+                      <div className="w-10 aspect-[3/4] bg-surface-dim overflow-hidden relative">
+                        <Image
                           src={p.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
                           alt={p.name}
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
                           referrerPolicy="no-referrer"
                         />
                       </div>

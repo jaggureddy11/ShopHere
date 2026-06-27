@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { IProduct, IReview } from '@/types';
 import axiosInstance from '@/utils/axiosInstance';
 import { useCartStore } from '@/store/cartStore';
@@ -174,11 +175,13 @@ export default function ProductDetailsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
         {/* Left Column: Image Gallery */}
         <div className="bg-surface-dim aspect-[3/4] w-full overflow-hidden relative">
-          <img
+          <Image
             src={product.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
             alt={product.name}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
             referrerPolicy="no-referrer"
+            priority
           />
           {product.stock <= 0 && (
             <span className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider">

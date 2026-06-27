@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const Footer: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div className="md:col-span-1 flex flex-col items-center md:items-start">
           <div className="flex items-center gap-3 mb-6">
-            <img src="/logo.png" alt="Shop Here Logo" className="h-10 w-auto object-contain invert mix-blend-screen" />
+            <Image src="/logo.png" alt="Shop Here Logo" width={40} height={40} className="h-10 w-auto object-contain invert mix-blend-screen" />
             <h2 className="text-2xl font-premium tracking-tighter uppercase">Shop Here</h2>
           </div>
           <p className="text-sm text-outline-variant max-w-xs leading-relaxed mb-6 text-center md:text-left">

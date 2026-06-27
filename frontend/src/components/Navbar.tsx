@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuthStore } from '../store/authStore';
 import { useCartStore } from '../store/cartStore';
@@ -58,9 +59,8 @@ const Navbar: React.FC = () => {
             <span className="material-symbols-outlined text-[28px]">menu</span>
           </button>
 
-          {/* Center: Logo only (absolute center) */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center group">
-            <img src="/logo.png" alt="Shop Here Logo" className="h-9 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
+            <Image src="/logo.png" alt="Shop Here Logo" width={36} height={36} className="w-auto h-9 object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
           </Link>
 
           {/* Right: Icons */}
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex justify-between items-center px-16 py-4">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center group">
-              <img src="/logo.png" alt="Shop Here Logo" className="h-12 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
+              <Image src="/logo.png" alt="Shop Here Logo" width={48} height={48} className="w-auto h-12 object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
             </Link>
             <nav className="flex gap-8 items-center">
               <Link href="/products?category=mens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Men</Link>

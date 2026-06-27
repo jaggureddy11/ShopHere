@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IProduct } from '@/types';
 import axiosInstance from '@/utils/axiosInstance';
 import ProductCard from '@/components/ProductCard';
@@ -64,20 +65,24 @@ export default function HomePage() {
           <div className="w-full h-full flex flex-col md:flex-row items-center justify-between">
             {/* Left Model Container */}
             <div className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-start pl-16 lg:pl-24">
-              <img 
-                src="/model-female.png?v=2" 
+              <Image 
+                src="/model-female.png" 
                 alt="Stitch Female Model" 
-                className="h-full w-auto object-contain select-none pointer-events-none"
+                fill
+                className="object-contain select-none pointer-events-none"
+                priority
               />
             </div>
 
             {/* Center Brand Container */}
             <div className="w-full md:w-[40%] flex flex-col items-center justify-center text-center px-6 py-8 md:py-0">
               {/* Logo */}
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="Shop Here Logo" 
+                width={176} height={176}
                 className="h-32 md:h-44 w-auto object-contain mix-blend-multiply" 
+                priority
               />
               
               {/* Brand Title */}
@@ -100,27 +105,31 @@ export default function HomePage() {
             
             {/* Right Model Container */}
             <div className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-end pr-16 lg:pr-24">
-              <img 
-                src="/model.png?v=2" 
+              <Image 
+                src="/model.png" 
                 alt="Stitch Male Model" 
-                className="h-full w-auto object-contain select-none pointer-events-none"
+                fill
+                className="object-contain select-none pointer-events-none"
+                priority
               />
             </div>
 
             {/* Mobile Layout for Models (stacked under center brand) */}
             <div className="flex md:hidden w-full px-6 gap-4 h-[250px] mt-6 justify-center">
               <div className="w-1/2 h-full flex items-center justify-center">
-                <img 
-                  src="/model-female.png?v=2" 
+                <Image 
+                  src="/model-female.png" 
                   alt="Stitch Female Model" 
-                  className="h-full w-auto object-contain select-none pointer-events-none"
+                  fill
+                  className="object-contain select-none pointer-events-none"
                 />
               </div>
               <div className="w-1/2 h-full flex items-center justify-center">
-                <img 
-                  src="/model.png?v=2" 
+                <Image 
+                  src="/model.png" 
                   alt="Stitch Male Model" 
-                  className="h-full w-auto object-contain select-none pointer-events-none"
+                  fill
+                  className="object-contain select-none pointer-events-none"
                 />
               </div>
             </div>
@@ -135,12 +144,15 @@ export default function HomePage() {
               transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-start pl-16 lg:pl-24"
             >
-              <motion.img 
-                style={{ x: leftX }}
-                src="/model-female.png?v=2" 
-                alt="Stitch Female Model" 
-                className="h-full w-auto object-contain select-none pointer-events-none"
-              />
+              <motion.div style={{ x: leftX }} className="relative h-full w-full">
+                <Image 
+                  src="/model-female.png" 
+                  alt="Stitch Female Model" 
+                  fill
+                  className="object-contain select-none pointer-events-none"
+                  priority
+                />
+              </motion.div>
             </motion.div>
 
             {/* Center Brand Container */}
@@ -166,9 +178,10 @@ export default function HomePage() {
                 }}
                 className="cursor-pointer select-none"
               >
-                <img 
+                <Image 
                   src="/logo.png" 
                   alt="Shop Here Logo" 
+                  width={176} height={176}
                   className="h-32 md:h-44 w-auto object-contain mix-blend-multiply" 
                 />
               </motion.div>
@@ -218,12 +231,14 @@ export default function HomePage() {
               transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="hidden md:flex md:w-[30%] h-full relative bg-white items-center justify-end pr-16 lg:pl-24"
             >
-              <motion.img 
-                style={{ x: rightX }}
-                src="/model.png?v=2" 
-                alt="Stitch Male Model" 
-                className="h-full w-auto object-contain select-none pointer-events-none"
-              />
+              <motion.div style={{ x: rightX }} className="h-full w-full">
+                <Image 
+                  src="/model.png" 
+                  alt="Stitch Male Model" 
+                  fill
+                  className="object-contain select-none pointer-events-none"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Mobile Layout for Models (stacked under center brand) with animations */}
@@ -233,19 +248,21 @@ export default function HomePage() {
               transition={{ duration: 1.0, delay: 0.5, ease: "easeOut" }}
               className="flex md:hidden w-full px-6 gap-4 h-[250px] mt-6 justify-center"
             >
-              <div className="w-1/2 h-full flex items-center justify-center">
-                <img 
-                  src="/model-female.png?v=2" 
-                  alt="Stitch Female Model" 
-                  className="h-full w-auto object-contain select-none pointer-events-none"
-                />
+                <div className="w-1/2 h-full flex items-center justify-center relative">
+                  <Image 
+                    src="/model-female.png" 
+                    alt="Stitch Female Model" 
+                    fill
+                    className="object-contain select-none pointer-events-none"
+                  />
               </div>
-              <div className="w-1/2 h-full flex items-center justify-center">
-                <img 
-                  src="/model.png?v=2" 
-                  alt="Stitch Male Model" 
-                  className="h-full w-auto object-contain select-none pointer-events-none"
-                />
+                <div className="w-1/2 h-full flex items-center justify-center relative">
+                  <Image 
+                    src="/model.png" 
+                    alt="Stitch Male Model" 
+                    fill
+                    className="object-contain select-none pointer-events-none"
+                  />
               </div>
             </motion.div>
           </div>
@@ -278,10 +295,12 @@ export default function HomePage() {
             className="w-full relative h-[65vh] md:h-[80vh] overflow-hidden group bg-surface-dim"
           >
             <Link href="/products?category=womens-clothing" className="relative w-full h-full block cursor-pointer">
-              <img 
+              <Image 
                 src="/images/community/womens_campaign.jpg" 
                 alt="Womenswear Campaign" 
-                className="w-full h-full object-cover transition-transform duration-[2000ms] ease-[0.16,1,0.3,1] group-hover:scale-105"
+                fill
+                className="object-cover transition-transform duration-[2000ms] ease-[0.16,1,0.3,1] group-hover:scale-105"
+                sizes="50vw"
               />
               {/* Subtle luxury ambient shading overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent transition-opacity duration-700" />
@@ -318,10 +337,12 @@ export default function HomePage() {
             className="w-full relative h-[65vh] md:h-[80vh] overflow-hidden group bg-surface-dim"
           >
             <Link href="/products?category=mens-clothing" className="relative w-full h-full block cursor-pointer">
-              <img 
+              <Image 
                 src="/images/community/mens_campaign.jpg" 
                 alt="Menswear Campaign" 
-                className="w-full h-full object-cover transition-transform duration-[2000ms] ease-[0.16,1,0.3,1] group-hover:scale-105"
+                fill
+                className="object-cover transition-transform duration-[2000ms] ease-[0.16,1,0.3,1] group-hover:scale-105"
+                sizes="50vw"
               />
               {/* Subtle luxury ambient shading overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent transition-opacity duration-700" />
@@ -388,15 +409,15 @@ export default function HomePage() {
               
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
-                <motion.img 
+                <motion.div
                   initial={{ scale: 1.15 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  src="/images/editorial/story1.png" 
-                  alt="Look 01" 
-                  className="w-full h-full object-cover"
-                />
+                  className="relative w-full h-full"
+                >
+                  <Image src="/images/editorial/story1.png" alt="Look 01" fill className="object-cover" />
+                </motion.div>
                 <div className="absolute inset-0 bg-black/5" />
               </div>
             </div>
@@ -421,15 +442,15 @@ export default function HomePage() {
               
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
-                <motion.img 
+                <motion.div
                   initial={{ scale: 1.15 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  src="/images/editorial/story4.jpg" 
-                  alt="Look 02" 
-                  className="w-full h-full object-cover"
-                />
+                  className="relative w-full h-full"
+                >
+                  <Image src="/images/editorial/story4.jpg" alt="Look 02" fill className="object-cover" />
+                </motion.div>
                 <div className="absolute inset-0 bg-black/5" />
               </div>
             </div>
@@ -454,15 +475,15 @@ export default function HomePage() {
               
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
-                <motion.img 
+                <motion.div
                   initial={{ scale: 1.15 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  src="/images/editorial/story2.jpg" 
-                  alt="Look 03" 
-                  className="w-full h-full object-cover"
-                />
+                  className="relative w-full h-full"
+                >
+                  <Image src="/images/editorial/story2.jpg" alt="Look 03" fill className="object-cover" />
+                </motion.div>
                 <div className="absolute inset-0 bg-black/5" />
               </div>
             </div>
@@ -487,15 +508,15 @@ export default function HomePage() {
               
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
-                <motion.img 
+                <motion.div
                   initial={{ scale: 1.15 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  src="/images/editorial/story3.png" 
-                  alt="Look 04" 
-                  className="w-full h-full object-cover"
-                />
+                  className="relative w-full h-full"
+                >
+                  <Image src="/images/editorial/story3.png" alt="Look 04" fill className="object-cover" />
+                </motion.div>
                 <div className="absolute inset-0 bg-black/5" />
               </div>
             </div>
@@ -520,15 +541,15 @@ export default function HomePage() {
               
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
-                <motion.img 
+                <motion.div
                   initial={{ scale: 1.15 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  src="/images/editorial/story5.jpg" 
-                  alt="Look 05" 
-                  className="w-full h-full object-cover"
-                />
+                  className="relative w-full h-full"
+                >
+                  <Image src="/images/editorial/story5.jpg" alt="Look 05" fill className="object-cover" />
+                </motion.div>
                 <div className="absolute inset-0 bg-black/5" />
               </div>
             </div>
@@ -666,7 +687,7 @@ export default function HomePage() {
                 boxShadow: '-15px 15px 25px rgba(0,0,0,0.2)',
               }}
             >
-              <img src="/images/community/c1.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 1" />
+              <Image src="/images/community/c1.png" fill className="object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 1" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-xs font-semibold tracking-wider uppercase">Urban Style</p>
               </div>
@@ -682,7 +703,7 @@ export default function HomePage() {
                 boxShadow: '-10px 10px 20px rgba(0,0,0,0.25)',
               }}
             >
-              <img src="/images/community/c2.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 2" />
+              <Image src="/images/community/c2.png" fill className="object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 2" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-xs font-semibold tracking-wider uppercase">Streetwear</p>
               </div>
@@ -697,7 +718,7 @@ export default function HomePage() {
                 boxShadow: '0 25px 50px -12px rgba(0,0,0,0.4)',
               }}
             >
-              <img src="/images/community/c3.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 3" />
+              <Image src="/images/community/c3.png" fill className="object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 3" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Community Core</p>
               </div>
@@ -713,7 +734,7 @@ export default function HomePage() {
                 boxShadow: '10px 10px 20px rgba(0,0,0,0.25)',
               }}
             >
-              <img src="/images/community/c4.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 4" />
+              <Image src="/images/community/c4.png" fill className="object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 4" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-xs font-semibold tracking-wider uppercase">Minimalist</p>
               </div>
@@ -729,7 +750,7 @@ export default function HomePage() {
                 boxShadow: '15px 15px 25px rgba(0,0,0,0.2)',
               }}
             >
-              <img src="/images/community/c5.png" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 5" />
+              <Image src="/images/community/c5.png" fill className="object-cover transition-transform duration-500 group-hover:scale-105" alt="Community 5" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <p className="text-white text-xs font-semibold tracking-wider uppercase">Casual Fit</p>
               </div>

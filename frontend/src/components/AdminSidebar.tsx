@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 interface SidebarLink {
@@ -40,7 +41,7 @@ const AdminSidebar: React.FC = () => {
     <aside className="w-full md:w-64 bg-primary text-white flex flex-col min-h-screen border-r border-white/10 shrink-0">
       <div className="p-6 border-b border-white/10">
         <Link href="/" className="flex items-center gap-3 hover:opacity-85 transition-opacity group">
-          <img src="/logo.png" alt="Shop Here Logo" className="h-9 w-auto object-contain invert mix-blend-screen transition-transform duration-300 group-hover:rotate-6" />
+          <Image src="/logo.png" alt="Shop Here Logo" width={36} height={36} className="h-9 w-auto object-contain invert mix-blend-screen transition-transform duration-300 group-hover:rotate-6" />
           <span className="text-xl font-premium uppercase tracking-tighter text-white">
             Shop Here
           </span>
