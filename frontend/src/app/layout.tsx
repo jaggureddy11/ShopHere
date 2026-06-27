@@ -27,6 +27,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html.show-splash body {
+                overflow: hidden;
+              }
+              #splash-overlay {
+                display: none;
+              }
+              html.show-splash #splash-overlay {
+                display: flex !important;
+              }
+            `,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (!sessionStorage.getItem('splash-played')) {
+                document.documentElement.classList.add('show-splash');
+              }
+            `,
+          }}
+        />
+      </head>
       <body className="antialiased">
         <SplashScreen />
         {children}

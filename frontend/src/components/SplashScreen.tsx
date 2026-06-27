@@ -5,15 +5,20 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function SplashScreen() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
     // Check sessionStorage to only show splash once per session
     const hasPlayed = sessionStorage.getItem('splash-played');
-    if (!hasPlayed) {
-      setIsVisible(true);
+    if (hasPlayed) {
+      // Remove class and disable transition so it unmounts instantly without flashing
+      document.documentElement.classList.remove('show-splash');
+      setShouldAnimate(false);
+      setIsVisible(false);
+    } else {
       // Lock scroll while splash is active
       document.body.style.overflow = 'hidden';
     }
@@ -22,31 +27,34 @@ export default function SplashScreen() {
   const handleAnimationComplete = () => {
     // Unlock scroll and record that the splash has played
     document.body.style.overflow = '';
+    document.documentElement.classList.remove('show-splash');
     sessionStorage.setItem('splash-played', 'true');
     setIsVisible(false);
   };
 
   useEffect(() => {
-    if (isVisible) {
+    if (isMounted && isVisible && shouldAnimate) {
       // Auto-close splash after 2.5 seconds (leaving time for the exit animation)
       const timer = setTimeout(() => {
         handleAnimationComplete();
       }, 2500);
       return () => clearTimeout(timer);
     }
-  }, [isVisible]);
-
-  if (!isMounted || !isVisible) return null;
+  }, [isMounted, isVisible, shouldAnimate]);
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          id="splash-overlay"
           initial={{ opacity: 1 }}
-          exit={{ 
+          exit={shouldAnimate ? { 
             opacity: 0,
             y: '-100%',
             transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+          } : { 
+            opacity: 0, 
+            transition: { duration: 0 } 
           }}
           className="fixed inset-0 bg-white z-[99999] flex flex-col items-center justify-center"
         >

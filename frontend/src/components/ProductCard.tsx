@@ -42,13 +42,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const categoryName = typeof product.category === 'object' ? product.category.name : 'Tech';
 
   return (
-    <div className="group flex flex-col relative bg-white border border-transparent hover:border-outline-variant hover:shadow-editorial p-3 transition-all duration-300 animate-fade-in-up">
+    <div className="group flex flex-col relative bg-white border border-transparent hover:border-outline-variant hover:shadow-editorial p-3 transition-[border-color,box-shadow] duration-300 animate-fade-in-up">
       <Link href={`/products/${product._id}`} className="block relative w-full aspect-[3/4] bg-surface-dim overflow-hidden">
         <Image
           src={product.images[0] || 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800'}
           alt={product.name}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-transform duration-700 group-hover:scale-105 transform-gpu"
           sizes="(max-width: 768px) 50vw, 25vw"
           referrerPolicy="no-referrer"
         />
@@ -92,7 +92,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <button
           disabled={product.stock <= 0}
           onClick={handleAddToCart}
-          className="w-full bg-primary disabled:bg-outline text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#fb56c1] hover:text-white active:scale-95 transition-all shadow-sm"
+          className="w-full bg-primary disabled:bg-outline text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#fb56c1] hover:text-white active:scale-95 transition-[background-color,color,transform] duration-200 shadow-sm"
         >
           {product.stock <= 0 ? 'Out of stock' : 'Add to bag'}
         </button>
