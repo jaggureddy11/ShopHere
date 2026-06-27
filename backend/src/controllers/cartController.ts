@@ -15,13 +15,16 @@ export const getCart = async (
 
     let cart = await Cart.findOne({ user: req.user.id }).populate('items.product');
 
+    if (!cart) {
       // Atomic upsert — safe against race conditions (no E11000 duplicate key)
-      cart = await Cart.findOneAndUpdate(
+      // upsert:true + new:true guarantees a non-null document is returned
+      cart = (await Cart.findOneAndUpdate(
         { user: req.user.id },
         { $setOnInsert: { user: req.user.id, items: [], expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) } },
         { upsert: true, new: true }
-      );
-      await cart!.populate('items.product');
+      ))!;
+      await cart.populate('items.product');
+    }
 
     res.status(200).json({ success: true, cart });
   } catch (error) {
@@ -56,11 +59,12 @@ export const addItemToCart = async (
 
     if (!cart) {
       // Atomic upsert — avoids duplicate key on concurrent requests
-      cart = await Cart.findOneAndUpdate(
+      // upsert:true + new:true guarantees a document is returned (non-null)
+      cart = (await Cart.findOneAndUpdate(
         { user: req.user.id },
         { $setOnInsert: { user: req.user.id, items: [], expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) } },
         { upsert: true, new: true }
-      );
+      ))!;
     }
 
     // Check if item already in cart
