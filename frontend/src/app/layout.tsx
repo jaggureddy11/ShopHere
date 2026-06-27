@@ -6,7 +6,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'ShopHere — Premium Fashion Store',
   description: 'Discover premium fashion for Men, Women & Kids. Shop the latest trends in clothing, footwear, and accessories at ShopHere.',
-  metadataBase: new URL(process.env.https://shophere-eight.vercel.app/ || 'http://localhost:3003'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3003'),
     icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
