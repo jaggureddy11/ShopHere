@@ -44,72 +44,33 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 w-full z-50 flex justify-between items-center px-4 md:px-16 py-4 bg-white border-b border-outline-variant transition-all duration-300">
-        <div className="flex items-center gap-3 md:gap-8">
-          {/* Mobile Hamburger toggle */}
-          <button 
+      {/* Mobile Header: 3-col grid to absolutely center logo */}
+      <header className="sticky top-0 w-full z-50 bg-white border-b border-outline-variant transition-all duration-300">
+
+        {/* Mobile layout: hamburger | centered logo | icons */}
+        <div className="flex md:hidden items-center justify-between px-4 py-4">
+          {/* Left: Hamburger */}
+          <button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden flex items-center justify-center p-1 text-primary hover:opacity-80 active:scale-95 transition-all"
+            className="flex items-center justify-center p-1 text-primary hover:opacity-80 active:scale-95 transition-all"
             aria-label="Open navigation menu"
           >
             <span className="material-symbols-outlined text-[28px]">menu</span>
           </button>
 
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
-            <img src="/logo.png" alt="Shop Here Logo" className="h-10 sm:h-12 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
-            <span className="text-xl sm:text-2xl font-premium text-primary tracking-tighter uppercase">
-              Shop Here
-            </span>
+          {/* Center: Logo only (absolute center) */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center group">
+            <img src="/logo.png" alt="Shop Here Logo" className="h-9 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
           </Link>
-          <nav className="hidden md:flex gap-8 items-center">
-            <Link href="/products?category=mens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
-              Men
-            </Link>
-            <Link href="/products?category=womens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
-              Women
-            </Link>
-            <Link href="/products?category=kids" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
-              Kids
-            </Link>
-            <Link href="/products?category=shoes" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
-              Shoes
-            </Link>
-            <Link href="/products?category=accessories" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
-              Accessories
-            </Link>
-            <Link href="/products?category=sportswear" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
-              Sportswear
-            </Link>
-            {user?.role === 'admin' && (
-              <Link href="/admin/dashboard" className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent hover:opacity-80 transition-opacity ml-2">
-                Admin
-              </Link>
-            )}
-          </nav>
-        </div>
 
-        <div className="flex items-center gap-4 sm:gap-6">
-          <form onSubmit={handleSearchSubmit} className="hidden md:flex items-center bg-surface-dim px-4 py-2">
-            <span className="material-symbols-outlined text-outline mr-2 text-[20px]">search</span>
-            <input
-              className="bg-transparent border-none focus:ring-0 text-sm w-48 p-0 outline-none"
-              placeholder="Search products..."
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </form>
-
-          <div className="flex items-center gap-3 sm:gap-5">
+          {/* Right: Icons */}
+          <div className="flex items-center gap-3">
             {isAuthenticated ? (
               <div className="relative group">
-                <button className="hover:opacity-80 transition-opacity flex items-center gap-1 active:scale-95">
+                <button className="hover:opacity-80 transition-opacity flex items-center active:scale-95">
                   <span className="material-symbols-outlined text-[24px]">person</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider hidden lg:inline max-w-[80px] truncate">
-                    {user?.name.split(' ')[0]}
-                  </span>
                 </button>
-                <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-outline-variant p-2 hidden group-hover:block shadow-editorial">
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-outline-variant p-2 hidden group-hover:block shadow-editorial z-50">
                   <Link href="/profile" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">
                     My Profile
                   </Link>
@@ -117,10 +78,7 @@ const Navbar: React.FC = () => {
                     Order History
                   </Link>
                   <button
-                    onClick={() => {
-                      logoutUser();
-                      router.push('/');
-                    }}
+                    onClick={() => { logoutUser(); router.push('/'); }}
                     className="w-full text-left block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim text-red-600 border-t border-outline-variant mt-1 pt-2"
                   >
                     Logout
@@ -128,29 +86,91 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <Link href="/login" className="hover:opacity-80 transition-opacity active:scale-95 flex items-center">
+              <Link href="/login" className="hover:opacity-80 transition-opacity active:scale-95">
                 <span className="material-symbols-outlined text-[24px]">person</span>
-                <span className="text-xs font-semibold uppercase tracking-wider ml-1 hidden lg:inline">Login</span>
               </Link>
             )}
-
             <Link href="/wishlist" className="hover:opacity-80 transition-opacity active:scale-95 relative">
               <span className="material-symbols-outlined text-[24px]">favorite</span>
               {wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4.5 h-4.5 flex items-center justify-center font-bold">
+                <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center font-bold">
                   {wishlistCount}
                 </span>
               )}
             </Link>
-
             <Link href="/cart" className="hover:opacity-80 transition-opacity active:scale-95 relative">
               <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4.5 h-4.5 flex items-center justify-center font-bold">
+                <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center font-bold">
                   {cartCount}
                 </span>
               )}
             </Link>
+          </div>
+        </div>
+
+        {/* Desktop layout: unchanged flex layout */}
+        <div className="hidden md:flex justify-between items-center px-16 py-4">
+          <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center group">
+              <img src="/logo.png" alt="Shop Here Logo" className="h-12 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:rotate-6" />
+            </Link>
+            <nav className="flex gap-8 items-center">
+              <Link href="/products?category=mens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Men</Link>
+              <Link href="/products?category=womens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Women</Link>
+              <Link href="/products?category=kids" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Kids</Link>
+              <Link href="/products?category=shoes" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Shoes</Link>
+              <Link href="/products?category=accessories" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Accessories</Link>
+              <Link href="/products?category=sportswear" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Sportswear</Link>
+              {user?.role === 'admin' && (
+                <Link href="/admin/dashboard" className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent hover:opacity-80 transition-opacity ml-2">Admin</Link>
+              )}
+            </nav>
+          </div>
+
+          <div className="flex items-center gap-6">
+            <form onSubmit={handleSearchSubmit} className="flex items-center bg-surface-dim px-4 py-2">
+              <span className="material-symbols-outlined text-outline mr-2 text-[20px]">search</span>
+              <input
+                className="bg-transparent border-none focus:ring-0 text-sm w-48 p-0 outline-none"
+                placeholder="Search products..."
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </form>
+            <div className="flex items-center gap-5">
+              {isAuthenticated ? (
+                <div className="relative group">
+                  <button className="hover:opacity-80 transition-opacity flex items-center gap-1 active:scale-95">
+                    <span className="material-symbols-outlined text-[24px]">person</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider hidden lg:inline max-w-[80px] truncate">{user?.name.split(' ')[0]}</span>
+                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-outline-variant p-2 hidden group-hover:block shadow-editorial">
+                    <Link href="/profile" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">My Profile</Link>
+                    <Link href="/orders" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">Order History</Link>
+                    <button onClick={() => { logoutUser(); router.push('/'); }} className="w-full text-left block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim text-red-600 border-t border-outline-variant mt-1 pt-2">Logout</button>
+                  </div>
+                </div>
+              ) : (
+                <Link href="/login" className="hover:opacity-80 transition-opacity active:scale-95 flex items-center">
+                  <span className="material-symbols-outlined text-[24px]">person</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider ml-1 hidden lg:inline">Login</span>
+                </Link>
+              )}
+              <Link href="/wishlist" className="hover:opacity-80 transition-opacity active:scale-95 relative">
+                <span className="material-symbols-outlined text-[24px]">favorite</span>
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4.5 h-4.5 flex items-center justify-center font-bold">{wishlistCount}</span>
+                )}
+              </Link>
+              <Link href="/cart" className="hover:opacity-80 transition-opacity active:scale-95 relative">
+                <span className="material-symbols-outlined text-[24px]">shopping_bag</span>
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4.5 h-4.5 flex items-center justify-center font-bold">{cartCount}</span>
+                )}
+              </Link>
+            </div>
           </div>
         </div>
       </header>

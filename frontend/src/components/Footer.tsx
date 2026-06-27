@@ -18,12 +18,12 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-white pt-16 pb-8 px-4 md:px-16 border-t border-outline-variant">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 flex flex-col items-center md:items-start">
           <div className="flex items-center gap-3 mb-6">
             <img src="/logo.png" alt="Shop Here Logo" className="h-10 w-auto object-contain invert mix-blend-screen" />
             <h2 className="text-2xl font-premium tracking-tighter uppercase">Shop Here</h2>
           </div>
-          <p className="text-sm text-outline-variant max-w-xs leading-relaxed mb-6">
+          <p className="text-sm text-outline-variant max-w-xs leading-relaxed mb-6 text-center md:text-left">
             Discover curated innovations designed for the modern professional. High-performance devices met with unparalleled aesthetic precision.
           </p>
           <div className="flex gap-4">
@@ -86,6 +86,30 @@ const Footer: React.FC = () => {
 
       <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-outline-variant">
         <p>© {new Date().getFullYear()} Shop Here Inc. All rights reserved.</p>
+        
+        {/* Developer Credits */}
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <span>Developed by <span className="text-white font-bold">R Jagadishwar Reddy</span></span>
+          <span className="text-white/20 hidden sm:inline">|</span>
+          <a 
+            href="https://github.com/jaggureddy11" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white hover:text-outline-variant transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+          >
+            GitHub
+          </a>
+          <span className="text-white/20">|</span>
+          <a 
+            href="https://www.linkedin.com/in/jaggureddy/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white hover:text-outline-variant transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+          >
+            LinkedIn
+          </a>
+        </div>
+
         <div className="flex gap-6">
           <a href="#" className="hover:underline">Privacy Policy</a>
           <a href="#" className="hover:underline">Terms of Service</a>
