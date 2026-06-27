@@ -3,6 +3,7 @@ import connectDB from '../config/db';
 import Category from '../models/Category';
 import Product from '../models/Product';
 import User from '../models/User';
+import Cart from '../models/Cart';
 import bcrypt from 'bcryptjs';
 
 const seed = async () => {
@@ -13,6 +14,7 @@ const seed = async () => {
     await Category.deleteMany({});
     await Product.deleteMany({});
     await User.deleteMany({});
+    await Cart.deleteMany({});
 
     console.log('Data cleared.');
 
