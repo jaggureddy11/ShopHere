@@ -42,6 +42,8 @@ const Navbar: React.FC = () => {
 
   const cartCount = mounted ? getCartCount() : 0;
   const wishlistCount = mounted ? wishlistProducts.length : 0;
+  const isAuth = mounted && isAuthenticated;
+  const currentUser = mounted ? user : null;
 
   return (
     <>
@@ -65,7 +67,7 @@ const Navbar: React.FC = () => {
 
           {/* Right: Icons */}
           <div className="flex items-center gap-3">
-            {isAuthenticated ? (
+            {isAuth ? (
               <div className="relative group">
                 <button className="hover:opacity-80 transition-opacity flex items-center active:scale-95">
                   <span className="material-symbols-outlined text-[24px]">person</span>
@@ -122,7 +124,7 @@ const Navbar: React.FC = () => {
               <Link href="/products?category=shoes" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Shoes</Link>
               <Link href="/products?category=accessories" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Accessories</Link>
               <Link href="/products?category=sportswear" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">Sportswear</Link>
-              {user?.role === 'admin' && (
+              {currentUser?.role === 'admin' && (
                 <Link href="/admin/dashboard" className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent hover:opacity-80 transition-opacity ml-2">Admin</Link>
               )}
             </nav>
@@ -140,11 +142,11 @@ const Navbar: React.FC = () => {
               />
             </form>
             <div className="flex items-center gap-5">
-              {isAuthenticated ? (
+              {isAuth ? (
                 <div className="relative group">
                   <button className="hover:opacity-80 transition-opacity flex items-center gap-1 active:scale-95">
                     <span className="material-symbols-outlined text-[24px]">person</span>
-                    <span className="text-xs font-semibold uppercase tracking-wider hidden lg:inline max-w-[80px] truncate">{user?.name.split(' ')[0]}</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider hidden lg:inline max-w-[80px] truncate">{currentUser?.name.split(' ')[0]}</span>
                   </button>
                   <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-outline-variant p-2 hidden group-hover:block shadow-editorial">
                     <Link href="/profile" className="block px-4 py-2 text-xs font-semibold uppercase hover:bg-surface-dim">My Profile</Link>
@@ -273,7 +275,7 @@ const Navbar: React.FC = () => {
               Sportswear
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
             </Link>
-            {user?.role === 'admin' && (
+            {currentUser?.role === 'admin' && (
               <Link 
                 href="/admin/dashboard" 
                 onClick={() => setIsMobileMenuOpen(false)}

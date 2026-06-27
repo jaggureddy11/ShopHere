@@ -391,7 +391,7 @@ export default function HomePage() {
         <div className="relative w-full">
           
           {/* Slide 1 */}
-          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 py-8 md:py-0">
+          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 py-8 md:py-0 transform-gpu">
             <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full">
               {/* Text Container (Left) */}
               <div className="col-span-1 md:col-span-5 flex flex-col justify-center px-8 md:px-16 lg:px-24 bg-white z-10 py-8 md:py-0">
@@ -410,11 +410,11 @@ export default function HomePage() {
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
                 <motion.div
-                  initial={{ scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative w-full h-full"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 1.0, ease: "easeOut" }}
+                  className="relative w-full h-full transform-gpu"
                 >
                   <Image src="/images/editorial/story1.png" alt="Look 01" fill className="object-cover" />
                 </motion.div>
@@ -424,7 +424,7 @@ export default function HomePage() {
           </div>
 
           {/* Slide 2 */}
-          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 shadow-2xl py-8 md:py-0">
+          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 py-8 md:py-0 transform-gpu">
             <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full">
               {/* Text Container (Left) */}
               <div className="col-span-1 md:col-span-5 flex flex-col justify-center px-8 md:px-16 lg:px-24 bg-white z-10 py-8 md:py-0">
@@ -443,11 +443,11 @@ export default function HomePage() {
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
                 <motion.div
-                  initial={{ scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative w-full h-full"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 1.0, ease: "easeOut" }}
+                  className="relative w-full h-full transform-gpu"
                 >
                   <Image src="/images/editorial/story4.jpg" alt="Look 02" fill className="object-cover" />
                 </motion.div>
@@ -457,7 +457,7 @@ export default function HomePage() {
           </div>
 
           {/* Slide 3 */}
-          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 shadow-2xl py-8 md:py-0">
+          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 py-8 md:py-0 transform-gpu">
             <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full">
               {/* Text Container (Left) */}
               <div className="col-span-1 md:col-span-5 flex flex-col justify-center px-8 md:px-16 lg:px-24 bg-white z-10 py-8 md:py-0">
@@ -476,11 +476,11 @@ export default function HomePage() {
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
                 <motion.div
-                  initial={{ scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative w-full h-full"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 1.0, ease: "easeOut" }}
+                  className="relative w-full h-full transform-gpu"
                 >
                   <Image src="/images/editorial/story2.jpg" alt="Look 03" fill className="object-cover" />
                 </motion.div>
@@ -490,7 +490,7 @@ export default function HomePage() {
           </div>
 
           {/* Slide 4 */}
-          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 shadow-2xl py-8 md:py-0">
+          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 py-8 md:py-0 transform-gpu">
             <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full">
               {/* Text Container (Left) */}
               <div className="col-span-1 md:col-span-5 flex flex-col justify-center px-8 md:px-16 lg:px-24 bg-white z-10 py-8 md:py-0">
@@ -509,11 +509,11 @@ export default function HomePage() {
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
                 <motion.div
-                  initial={{ scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative w-full h-full"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 1.0, ease: "easeOut" }}
+                  className="relative w-full h-full transform-gpu"
                 >
                   <Image src="/images/editorial/story3.png" alt="Look 04" fill className="object-cover" />
                 </motion.div>
@@ -523,7 +523,7 @@ export default function HomePage() {
           </div>
 
           {/* Slide 5 */}
-          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 shadow-2xl py-8 md:py-0">
+          <div className="relative md:sticky top-0 h-auto md:h-screen w-full bg-white flex items-center overflow-hidden border-b border-outline-variant/10 py-8 md:py-0 transform-gpu">
             <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full">
               {/* Text Container (Left) */}
               <div className="col-span-1 md:col-span-5 flex flex-col justify-center px-8 md:px-16 lg:px-24 bg-white z-10 py-8 md:py-0">
@@ -542,11 +542,11 @@ export default function HomePage() {
               {/* Image Container (Right) */}
               <div className="col-span-1 md:col-span-7 relative h-[50vh] md:h-full overflow-hidden bg-surface-dim">
                 <motion.div
-                  initial={{ scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative w-full h-full"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 1.0, ease: "easeOut" }}
+                  className="relative w-full h-full transform-gpu"
                 >
                   <Image src="/images/editorial/story5.jpg" alt="Look 05" fill className="object-cover" />
                 </motion.div>
