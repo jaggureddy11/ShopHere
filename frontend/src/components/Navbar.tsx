@@ -23,6 +23,7 @@ const Navbar: React.FC = () => {
     setMounted(true);
     fetchCart();
     fetchWishlist();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   useEffect(() => {

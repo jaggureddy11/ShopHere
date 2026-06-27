@@ -31,6 +31,7 @@ export default function AdminProductManagementPage() {
 
   useEffect(() => {
     fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {

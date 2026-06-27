@@ -12,6 +12,7 @@ export default function WishlistPage() {
   useEffect(() => {
     setMounted(true);
     fetchWishlist();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!mounted) {
