@@ -33,19 +33,7 @@ const PaytmLogo = () => (
   <img src="/payment-icons/paytm.svg" alt="Paytm" style={{ height: '22px', width: 'auto', filter: 'invert(9%) sepia(96%) saturate(3210%) hue-rotate(213deg) brightness(80%) contrast(108%)' }} />
 );
 
-// BHIM UPI — accurate official-style inline SVG
-const BhimLogo = () => (
-  <svg height="22" viewBox="0 0 88 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* BHIM orange-green split text */}
-    <text x="0" y="17" fontFamily="Arial Black, Arial, sans-serif" fontSize="14" fontWeight="900" fill="#F47D20">BH</text>
-    <text x="19" y="17" fontFamily="Arial Black, Arial, sans-serif" fontSize="14" fontWeight="900" fill="#097939">IM</text>
-    {/* Divider */}
-    <line x1="41" y1="3" x2="41" y2="21" stroke="#D1D5DB" strokeWidth="1.5"/>
-    {/* UPI logo triangle + text */}
-    <polygon points="48,6 56,6 52,14" fill="#097939"/>
-    <text x="47" y="21" fontFamily="Arial Black, Arial, sans-serif" fontSize="8" fontWeight="900" fill="#097939">UPI</text>
-  </svg>
-);
+
 
 function CheckoutContent() {
   const router = useRouter();
@@ -74,7 +62,7 @@ function CheckoutContent() {
   // UPI / QR Code Payment Form
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'upi' | 'cod'>('upi');
   const [upiTxnId, setUpiTxnId] = useState('');
-  const [upiProvider, setUpiProvider] = useState<'gpay' | 'phonepe' | 'paytm' | 'bhim' | 'qr'>('gpay');
+  const [upiProvider, setUpiProvider] = useState<'gpay' | 'phonepe' | 'paytm' | 'qr'>('gpay');
   const [upiId, setUpiId] = useState('');
 
   const [submitting, setSubmitting] = useState(false);
@@ -568,7 +556,6 @@ function CheckoutContent() {
                           { id: 'gpay', logo: <GooglePayLogo /> },
                           { id: 'phonepe', logo: <PhonePeLogo /> },
                           { id: 'paytm', logo: <PaytmLogo /> },
-                          { id: 'bhim', logo: <BhimLogo /> },
                           { id: 'qr', logo: <span className="flex items-center gap-1 font-bold text-[9px] text-primary"><span className="material-symbols-outlined text-[15px]">qr_code_scanner</span>Scan QR</span> }
                         ].map((prov) => (
                           <button
@@ -597,7 +584,6 @@ function CheckoutContent() {
                               {upiProvider === 'gpay' && 'Google Pay'}
                               {upiProvider === 'phonepe' && 'PhonePe'}
                               {upiProvider === 'paytm' && 'Paytm'}
-                              {upiProvider === 'bhim' && 'BHIM UPI'}
                             </span>
                           </div>
 
@@ -622,7 +608,7 @@ function CheckoutContent() {
                               onChange={(e) => setUpiId(e.target.value.trim())}
                             />
                             <p className="text-[8px] text-outline uppercase tracking-wider pt-1.5 leading-relaxed">
-                              A payment request will be sent to your {upiProvider === 'gpay' ? 'Google Pay' : upiProvider === 'phonepe' ? 'PhonePe' : upiProvider === 'paytm' ? 'Paytm' : 'BHIM'} app after placing the order.
+                              A payment request will be sent to your {upiProvider === 'gpay' ? 'Google Pay' : upiProvider === 'phonepe' ? 'PhonePe' : upiProvider === 'paytm' ? 'Paytm' : 'UPI'} app after placing the order.
                             </p>
                           </div>
                         </div>
