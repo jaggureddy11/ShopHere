@@ -80,11 +80,10 @@ export default function AdminUserManagementPage() {
                     {/* Role */}
                     <td className="py-4 text-center">
                       <span
-                        className={`inline-block px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest ${
-                          u.role === 'admin'
+                        className={`inline-block px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest ${u.role === 'admin'
                             ? 'bg-purple-100 text-purple-800'
                             : 'bg-blue-100 text-blue-800'
-                        }`}
+                          }`}
                       >
                         {u.role}
                       </span>
