@@ -61,27 +61,27 @@ const Navbar: React.FC = () => {
               Shop Here
             </span>
           </Link>
-          <nav className="hidden md:flex gap-6 items-center">
-            <Link href="/products?category=mens-clothing" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#ee5f73] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+          <nav className="hidden md:flex gap-8 items-center">
+            <Link href="/products?category=mens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
               Men
             </Link>
-            <Link href="/products?category=womens-clothing" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#fb56c1] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            <Link href="/products?category=womens-clothing" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
               Women
             </Link>
-            <Link href="/products?category=kids" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#f26a10] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            <Link href="/products?category=kids" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
               Kids
             </Link>
-            <Link href="/products?category=shoes" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#0db89e] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            <Link href="/products?category=shoes" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
               Shoes
             </Link>
-            <Link href="/products?category=accessories" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#f59e0b] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            <Link href="/products?category=accessories" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
               Accessories
             </Link>
-            <Link href="/products?category=sportswear" className="relative py-2 text-xs font-black uppercase tracking-wider text-primary hover:text-black after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[3px] after:bg-[#3b82f6] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left transition-colors">
+            <Link href="/products?category=sportswear" className="relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80 hover:text-primary after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left transition-all">
               Sportswear
             </Link>
             {user?.role === 'admin' && (
-              <Link href="/admin/dashboard" className="text-xs font-bold uppercase text-accent hover:opacity-80 transition-opacity ml-2">
+              <Link href="/admin/dashboard" className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent hover:opacity-80 transition-opacity ml-2">
                 Admin
               </Link>
             )}
@@ -208,7 +208,7 @@ const Navbar: React.FC = () => {
             <Link 
               href="/products?category=mens-clothing" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center text-sm font-semibold uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-3 hover:text-[#ee5f73] transition-colors"
+              className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-primary border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
             >
               Men
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
@@ -216,7 +216,7 @@ const Navbar: React.FC = () => {
             <Link 
               href="/products?category=womens-clothing" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center text-sm font-semibold uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-3 hover:text-[#fb56c1] transition-colors"
+              className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-primary border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
             >
               Women
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
@@ -224,7 +224,7 @@ const Navbar: React.FC = () => {
             <Link 
               href="/products?category=kids" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center text-sm font-semibold uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-3 hover:text-[#f26a10] transition-colors"
+              className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-primary border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
             >
               Kids
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
@@ -232,7 +232,7 @@ const Navbar: React.FC = () => {
             <Link 
               href="/products?category=shoes" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center text-sm font-semibold uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-3 hover:text-[#0db89e] transition-colors"
+              className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-primary border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
             >
               Shoes
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
@@ -240,7 +240,7 @@ const Navbar: React.FC = () => {
             <Link 
               href="/products?category=accessories" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center text-sm font-semibold uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-3 hover:text-[#f59e0b] transition-colors"
+              className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-primary border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
             >
               Accessories
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
@@ -248,7 +248,7 @@ const Navbar: React.FC = () => {
             <Link 
               href="/products?category=sportswear" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex justify-between items-center text-sm font-semibold uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-3 hover:text-[#3b82f6] transition-colors"
+              className="flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-primary border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
             >
               Sportswear
               <span className="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
@@ -257,7 +257,7 @@ const Navbar: React.FC = () => {
               <Link 
                 href="/admin/dashboard" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex justify-between items-center text-sm font-black uppercase text-accent border-b border-outline-variant/30 pb-3 hover:opacity-85 transition-opacity"
+                className="flex justify-between items-center text-xs font-bold uppercase tracking-widest text-accent border-b border-outline-variant/30 pb-3 hover:opacity-75 transition-opacity"
               >
                 Admin Dashboard
                 <span className="material-symbols-outlined text-[18px]">admin_panel_settings</span>
