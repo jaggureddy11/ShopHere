@@ -13,42 +13,37 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || 'pk_test_51TkUpyLmK5BB3Unpenm87NErgRHkrQky8QhnIoI2j9tKBkgwqO81Y8X5OJDdsic1ClgwAeSkdqZlhcIrFwxh67ry00ZqUJWiBC');
 
-// Google Pay SVG logo
+// Google Pay — real icon from simple-icons (colored via filter)
 const GooglePayLogo = () => (
-  <svg className="h-5 w-auto" viewBox="0 0 45 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8.2 9.1c0-.6-.1-1.1-.2-1.6H8.2c-.3 0-.6.1-.9.2L3.1 4.5C2.1 5.9 1.5 7.5 1.5 9.3s.6 3.4 1.6 4.8l4.2-3.2C7 10.4 6.8 9.8 6.8 9.1z" fill="#EA4335"/>
-    <path d="M15.2 4.2c-2.4 0-4.4 1.4-5.2 3.4L5.7 3.2C7.3 1.3 9.7 0 12.5 0c2.7 0 5 .9 6.8 2.5l-3 3.1c-.8-.7-1.9-1.1-3.1-1.1z" fill="#4285F4"/>
-    <path d="M12.5 18.6c-2.8 0-5.2-1.3-6.8-3.2l4.3-3.4c.8 2 2.8 3.4 5.2 3.4 1.5 0 2.7-.5 3.5-1.3l3 3c-1.8 1.9-4.3 3.1-7.2 3.1z" fill="#34A853"/>
-    <path d="M21.8 9.1c0-.5 0-1-.1-1.5H12.5v3h3.5c-.2.9-.8 1.6-1.5 2.1l3 3c1.8-1.7 2.8-4.1 2.8-6.6z" fill="#FBBC05"/>
-    <text x="25" y="13" fill="#5F6368" fontFamily="system-ui, sans-serif" fontSize="12" fontWeight="bold">Pay</text>
-  </svg>
+  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+    <img src="/payment-icons/gpay.svg" alt="Google Pay" style={{ height: '22px', width: 'auto', filter: 'invert(29%) sepia(98%) saturate(1352%) hue-rotate(207deg) brightness(95%) contrast(95%)' }} />
+  </span>
 );
 
-// PhonePe SVG logo
+// PhonePe — real icon from simple-icons (colored violet)
 const PhonePeLogo = () => (
-  <svg className="h-6 w-auto" viewBox="0 0 85 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2" y="2" width="20" height="20" rx="5" fill="#5F259F"/>
-    <path d="M11 6h4v1.5h-4v.8h4v1.5h-4v2.5c0 .6.4 1 1 1h3v1.5h-3.5c-1.4 0-2.5-1.1-2.5-2.5v-2.5h-2V9.8h2v-.8h-2V7.5h2V6z" fill="white"/>
-    <text x="28" y="16.5" fill="#5F259F" fontFamily="system-ui, -apple-system, sans-serif" fontSize="13" fontWeight="bold">PhonePe</text>
-  </svg>
+  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+    <img src="/payment-icons/phonepe.svg" alt="PhonePe" style={{ height: '22px', width: 'auto', filter: 'invert(17%) sepia(93%) saturate(2714%) hue-rotate(268deg) brightness(70%) contrast(105%)' }} />
+    <span style={{ fontWeight: 700, fontSize: '13px', color: '#5F259F', letterSpacing: '-0.3px', fontFamily: 'system-ui, sans-serif' }}>PhonePe</span>
+  </span>
 );
 
-// Paytm SVG logo
+// Paytm — real icon from simple-icons
 const PaytmLogo = () => (
-  <svg className="h-5.5 w-auto" viewBox="0 0 65 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="15.5" fill="#002970" fontFamily="system-ui, -apple-system, sans-serif" fontSize="15" fontWeight="900" letterSpacing="-0.5px">Pay</text>
-    <text x="26" y="15.5" fill="#00BAF2" fontFamily="system-ui, -apple-system, sans-serif" fontSize="15" fontWeight="900" letterSpacing="-0.5px">tm</text>
-  </svg>
+  <img src="/payment-icons/paytm.svg" alt="Paytm" style={{ height: '22px', width: 'auto', filter: 'invert(9%) sepia(96%) saturate(3210%) hue-rotate(213deg) brightness(80%) contrast(108%)' }} />
 );
 
-// BHIM UPI SVG logo
+// BHIM UPI — accurate official-style inline SVG
 const BhimLogo = () => (
-  <svg className="h-5.5 w-auto" viewBox="0 0 70 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="15.5" fill="#F47D20" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="900" letterSpacing="-0.5px">BH</text>
-    <text x="20" y="15.5" fill="#097939" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="900" letterSpacing="-0.5px">IM</text>
-    <rect x="39" y="3" width="1.5" height="14" fill="#E5E7EB"/>
-    <path d="M46 6.5h1.8L46.3 11h-1.8L46 6.5z" fill="#00824A" />
-    <text x="49" y="14" fill="#00824A" fontFamily="system-ui, sans-serif" fontSize="9" fontWeight="900" letterSpacing="0.2px">UPI</text>
+  <svg height="22" viewBox="0 0 88 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* BHIM orange-green split text */}
+    <text x="0" y="17" fontFamily="Arial Black, Arial, sans-serif" fontSize="14" fontWeight="900" fill="#F47D20">BH</text>
+    <text x="19" y="17" fontFamily="Arial Black, Arial, sans-serif" fontSize="14" fontWeight="900" fill="#097939">IM</text>
+    {/* Divider */}
+    <line x1="41" y1="3" x2="41" y2="21" stroke="#D1D5DB" strokeWidth="1.5"/>
+    {/* UPI logo triangle + text */}
+    <polygon points="48,6 56,6 52,14" fill="#097939"/>
+    <text x="47" y="21" fontFamily="Arial Black, Arial, sans-serif" fontSize="8" fontWeight="900" fill="#097939">UPI</text>
   </svg>
 );
 
@@ -512,13 +507,8 @@ function CheckoutContent() {
                           Secure Card Details
                         </span>
                         <div className="flex items-center gap-2 opacity-90">
-                          <svg className="h-2.5 w-auto" viewBox="0 0 36 12" fill="#1A1F71">
-                            <path d="M13.82 0L10.82 12H8.38L5.78 2.68C5.66 2.2 5.56 1.8 5.06 1.5C4.54 1.2 3.52 0.88 2.48 0.66L2.58 0.16H6.62C7.26 0.16 7.82 0.58 7.96 1.24L9.12 7.5L11.58 0H13.82ZM20.88 8.16C20.9 5.6 17.5 5.48 17.52 3.92C17.54 3.44 17.98 2.94 18.96 2.82C19.44 2.76 20.76 2.7 22.36 3.46L22.78 1.4C21.9 1.08 20.78 0.76 19.38 0.76C17.02 0.76 15.34 2.06 15.32 4.62C15.3 7.5 18.72 7.64 18.7 9.24C18.68 9.72 18.2 10.2 17.14 10.32C16.5 10.4 15.22 10.3 13.58 9.54L13.16 11.66C14.16 12.06 15.42 12.4 16.92 12.4C19.38 12.4 20.86 11.1 20.88 8.16ZM26.96 0L25.04 12H22.72L24.64 0H26.96ZM34.2 0.16L30.98 8.2L29.6 1.2C29.44 0.54 28.92 0.16 28.3 0.16H24.58L24.5 0.52C25.32 0.72 26.54 1.1 27.52 1.62C28.12 1.94 28.28 2.18 28.46 2.88L30.96 12H33.42L36 0.16H34.2Z"/>
-                          </svg>
-                          <svg className="h-3.5 w-auto" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="10" cy="10" r="10" fill="#EB001B"/>
-                            <circle cx="22" cy="10" r="10" fill="#F79E1B" fillOpacity="0.8"/>
-                          </svg>
+                          <img src="/payment-icons/visa.svg" alt="Visa" style={{ height: '14px', width: 'auto', filter: 'invert(13%) sepia(83%) saturate(1500%) hue-rotate(213deg) brightness(70%) contrast(120%)' }} />
+                          <img src="/payment-icons/mastercard.svg" alt="Mastercard" style={{ height: '16px', width: 'auto' }} />
                         </div>
                       </div>
 
