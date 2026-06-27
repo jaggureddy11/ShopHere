@@ -17,28 +17,37 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || 'pk_test_
 const GooglePayLogo = () => (
   <svg width="58" height="24" viewBox="0 0 58 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Google G icon */}
-    <path d="M11.5 10.5H6v3h3.2c-.3 1.5-1.6 2.5-3.2 2.5C4.1 16 2.5 14.4 2.5 12.5S4.1 9 6 9c.9 0 1.7.3 2.3.9l2.1-2.1C9.1 6.7 7.6 6 6 6 2.7 6 0 8.7 0 12s2.7 6 6 6c3.3 0 5.8-2.3 5.8-5.7 0-.4 0-.8-.1-1.1-.1 0-.2.3-.2.2z" fill="#4285F4"/>
-    <path d="M11.5 10.5c0 .1.1.5.1.8v.2H6v-3h5.5z" fill="#4285F4"/>
-    <path d="M6 6c1.6 0 3.1.7 4.4 1.8L8.3 9.9C7.7 9.3 6.9 9 6 9 4.1 9 2.5 10.3 2.1 12L0 10.3C1.1 7.8 3.3 6 6 6z" fill="#EA4335"/>
-    <path d="M0 10.3l2.1 1.7C2.5 13.7 4.1 15 6 15c1.6 0 2.9-.7 3.7-1.8l2.1 1.6C10.6 16.5 8.5 18 6 18 3.3 18 1.1 16.2 0 13.7V10.3z" fill="#34A853"/>
-    <path d="M6 18c2.5 0 4.6-1.5 5.8-3.8L9.7 13.2C9 14.3 7.6 15 6 15v3z" fill="#34A853"/>
-    <path d="M11.8 11.5H6v-1h5.9c.1.3.1.7.1 1 0-.1 0 0-.2 0z" fill="#FBBC05"/>
+    <path d="M11.5 10.5H6v3h3.2c-.3 1.5-1.6 2.5-3.2 2.5C4.1 16 2.5 14.4 2.5 12.5S4.1 9 6 9c.9 0 1.7.3 2.3.9l2.1-2.1C9.1 6.7 7.6 6 6 6 2.7 6 0 8.7 0 12s2.7 6 6 6c3.3 0 5.8-2.3 5.8-5.7 0-.4 0-.8-.1-1.1-.1 0-.2.3-.2.2z" fill="#4285F4" />
+    <path d="M11.5 10.5c0 .1.1.5.1.8v.2H6v-3h5.5z" fill="#4285F4" />
+    <path d="M6 6c1.6 0 3.1.7 4.4 1.8L8.3 9.9C7.7 9.3 6.9 9 6 9 4.1 9 2.5 10.3 2.1 12L0 10.3C1.1 7.8 3.3 6 6 6z" fill="#EA4335" />
+    <path d="M0 10.3l2.1 1.7C2.5 13.7 4.1 15 6 15c1.6 0 2.9-.7 3.7-1.8l2.1 1.6C10.6 16.5 8.5 18 6 18 3.3 18 1.1 16.2 0 13.7V10.3z" fill="#34A853" />
+    <path d="M6 18c2.5 0 4.6-1.5 5.8-3.8L9.7 13.2C9 14.3 7.6 15 6 15v3z" fill="#34A853" />
+    <path d="M11.8 11.5H6v-1h5.9c.1.3.1.7.1 1 0-.1 0 0-.2 0z" fill="#FBBC05" />
     {/* "Pay" wordmark */}
     <text x="14" y="16.5" fontFamily="'Google Sans', Arial, sans-serif" fontSize="11" fontWeight="600" fill="#3C4043">Pay</text>
   </svg>
 );
 
-// PhonePe — accurate brand SVG (purple square + rupee P mark + wordmark)
+// PhonePe — real icon (simple-icons SVG, white on purple square) + wordmark
 const PhonePeLogo = () => (
-  <svg width="72" height="24" viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Purple rounded square */}
-    <rect x="0" y="1" width="22" height="22" rx="5" fill="#5F259F"/>
-    {/* P-shape with rupee style */}
-    <path d="M7 6h5.5c1.9 0 3.5 1.3 3.5 3s-1.6 3-3.5 3H9v2h3.5v1.5H9V18H7V6zm2 4.5h3.5c.8 0 1.5-.7 1.5-1.5S13.3 7.5 12.5 7.5H9v3z" fill="white"/>
-    {/* PhonePe wordmark */}
-    <text x="26" y="16" fontFamily="Arial, sans-serif" fontSize="10.5" fontWeight="800" fill="#5F259F" letterSpacing="-0.2">PhonePe</text>
-  </svg>
+  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      width: '22px', height: '22px', borderRadius: '5px',
+      backgroundColor: '#5F259F', flexShrink: 0,
+    }}>
+      <img
+        src="/payment-icons/phonepe.svg"
+        alt="PhonePe"
+        style={{ width: '16px', height: '16px', filter: 'invert(1)' }}
+      />
+    </span>
+    <span style={{ fontWeight: 800, fontSize: '11px', color: '#5F259F', fontFamily: 'Arial, sans-serif', whiteSpace: 'nowrap' }}>
+      PhonePe
+    </span>
+  </span>
 );
+
 
 // Paytm — accurate brand wordmark SVG
 const PaytmLogo = () => (
@@ -58,7 +67,7 @@ function CheckoutContent() {
 
   const [mounted, setMounted] = useState(false);
   const [selectedAddressId, setSelectedAddressId] = useState('');
-  
+
   // Custom Address form
   const [showNewAddressForm, setShowNewAddressForm] = useState(false);
   const [street, setStreet] = useState('');
@@ -157,7 +166,7 @@ function CheckoutContent() {
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate checkout payload
     let finalAddress = null;
     if (selectedAddressId) {
@@ -205,7 +214,7 @@ function CheckoutContent() {
         },
         shippingMethod: shippingFee === 0 ? 'Free Shipping' : 'Standard Shipping',
         paymentMethod: paymentMethod,
-        transactionId: paymentMethod === 'upi' 
+        transactionId: paymentMethod === 'upi'
           ? (upiProvider === 'qr' ? upiTxnId : `upi_${upiProvider}_${upiId.replace(/[^a-zA-Z0-9]/g, '')}_${Math.random().toString(36).substring(2, 8)}`)
           : (paymentMethod === 'cod' ? `cod_${Math.random().toString(36).substring(2, 10)}` : undefined),
         totalPrice: orderTotal,
@@ -216,7 +225,7 @@ function CheckoutContent() {
       };
 
       const res = await axiosInstance.post('/orders', orderPayload);
-      
+
       if (res.data.success) {
         const { order, clientSecret } = res.data;
 
@@ -315,9 +324,8 @@ function CheckoutContent() {
                 {user.addresses.map((addr) => (
                   <label
                     key={addr._id}
-                    className={`flex items-start gap-4 p-4 border border-outline-variant cursor-pointer transition-all ${
-                      selectedAddressId === addr._id ? 'bg-surface-dim border-primary' : 'hover:bg-surface-dim'
-                    }`}
+                    className={`flex items-start gap-4 p-4 border border-outline-variant cursor-pointer transition-all ${selectedAddressId === addr._id ? 'bg-surface-dim border-primary' : 'hover:bg-surface-dim'
+                      }`}
                   >
                     <input
                       type="radio"
@@ -483,11 +491,10 @@ function CheckoutContent() {
                       key={tab.id}
                       type="button"
                       onClick={() => setPaymentMethod(tab.id as any)}
-                      className={`flex-1 md:flex-none flex items-center justify-between px-5 py-5 text-[10px] font-bold uppercase tracking-wider text-left transition-all border-b md:border-b-0 border-outline-variant/40 ${
-                        paymentMethod === tab.id 
-                          ? 'bg-white border-l-4 border-l-primary text-primary font-black border-b-2 border-b-primary md:border-b-0' 
-                          : 'text-outline border-l-4 border-l-transparent hover:bg-surface-dim'
-                      }`}
+                      className={`flex-1 md:flex-none flex items-center justify-between px-5 py-5 text-[10px] font-bold uppercase tracking-wider text-left transition-all border-b md:border-b-0 border-outline-variant/40 ${paymentMethod === tab.id
+                        ? 'bg-white border-l-4 border-l-primary text-primary font-black border-b-2 border-b-primary md:border-b-0'
+                        : 'text-outline border-l-4 border-l-transparent hover:bg-surface-dim'
+                        }`}
                     >
                       <div className="flex items-center gap-2">
                         <span className="material-symbols-outlined text-[18px]">
@@ -511,13 +518,13 @@ function CheckoutContent() {
                         <div className="flex items-center gap-2 opacity-90">
                           {/* Visa wordmark */}
                           <svg height="12" viewBox="0 0 52 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19.3 1L14.7 16H11.3L6.7 3.8C6.5 3.2 6.3 2.9 5.8 2.6 5.1 2.2 4 1.9 2.9 1.7L3 1.2H8.4c.9 0 1.7.6 1.9 1.6l1.8 9.5L16.2 1H19.3zm13.3 10.2c0-3.7-5.1-3.9-5-5.6 0-.5.5-1 1.5-1.2.5-.1 1.8-.1 3.3.6L33 3.1C32.2 2.8 31 2.5 29.5 2.5c-3.5 0-6 1.9-6 4.6 0 2 1.8 3.1 3.1 3.8 1.4.7 1.9 1.1 1.9 1.7 0 .9-1.1 1.3-2.1 1.4-1.8 0-2.8-.5-3.6-.8l-.6 3C23 16.4 24.4 16.7 26 16.7c3.7 0 6.2-1.9 6.2-4.7zm9.2 4.8H38.7L36.5 1h3.5c.7 0 1.3.4 1.6 1l4.3 13.1-3.8.1L42.5 1l-3.5 15zm-6.5-15l-3.7 15H28.8L32.5 1h2.8z" fill="#1A1F71"/>
+                            <path d="M19.3 1L14.7 16H11.3L6.7 3.8C6.5 3.2 6.3 2.9 5.8 2.6 5.1 2.2 4 1.9 2.9 1.7L3 1.2H8.4c.9 0 1.7.6 1.9 1.6l1.8 9.5L16.2 1H19.3zm13.3 10.2c0-3.7-5.1-3.9-5-5.6 0-.5.5-1 1.5-1.2.5-.1 1.8-.1 3.3.6L33 3.1C32.2 2.8 31 2.5 29.5 2.5c-3.5 0-6 1.9-6 4.6 0 2 1.8 3.1 3.1 3.8 1.4.7 1.9 1.1 1.9 1.7 0 .9-1.1 1.3-2.1 1.4-1.8 0-2.8-.5-3.6-.8l-.6 3C23 16.4 24.4 16.7 26 16.7c3.7 0 6.2-1.9 6.2-4.7zm9.2 4.8H38.7L36.5 1h3.5c.7 0 1.3.4 1.6 1l4.3 13.1-3.8.1L42.5 1l-3.5 15zm-6.5-15l-3.7 15H28.8L32.5 1h2.8z" fill="#1A1F71" />
                           </svg>
                           {/* Mastercard overlapping circles */}
                           <svg height="16" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="10" cy="10" r="10" fill="#EB001B"/>
-                            <circle cx="20" cy="10" r="10" fill="#F79E1B" fillOpacity="0.85"/>
-                            <path d="M15 5.7A10 10 0 0 1 18.3 10 10 10 0 0 1 15 14.3 10 10 0 0 1 11.7 10 10 10 0 0 1 15 5.7z" fill="#FF5F00"/>
+                            <circle cx="10" cy="10" r="10" fill="#EB001B" />
+                            <circle cx="20" cy="10" r="10" fill="#F79E1B" fillOpacity="0.85" />
+                            <path d="M15 5.7A10 10 0 0 1 18.3 10 10 10 0 0 1 15 14.3 10 10 0 0 1 11.7 10 10 10 0 0 1 15 5.7z" fill="#FF5F00" />
                           </svg>
                         </div>
                       </div>
@@ -584,11 +591,10 @@ function CheckoutContent() {
                             key={prov.id}
                             type="button"
                             onClick={() => setUpiProvider(prov.id as any)}
-                            className={`flex flex-col items-center justify-center py-4 px-2 border text-center transition-all gap-1.5 rounded-none min-h-[52px] ${
-                              upiProvider === prov.id 
-                                ? 'border-primary bg-primary/[0.03] ring-1 ring-primary' 
-                                : 'border-outline-variant bg-white text-primary hover:bg-surface-dim'
-                            }`}
+                            className={`flex flex-col items-center justify-center py-4 px-2 border text-center transition-all gap-1.5 rounded-none min-h-[52px] ${upiProvider === prov.id
+                              ? 'border-primary bg-primary/[0.03] ring-1 ring-primary'
+                              : 'border-outline-variant bg-white text-primary hover:bg-surface-dim'
+                              }`}
                           >
                             {prov.logo}
                           </button>
@@ -623,8 +629,8 @@ function CheckoutContent() {
                               className="w-full border border-outline-variant px-3 py-2.5 text-xs focus:outline-none focus:border-primary rounded-none bg-white text-primary font-mono"
                               placeholder={
                                 upiProvider === 'gpay' ? 'username@okaxis' :
-                                upiProvider === 'phonepe' ? 'username@yapl' :
-                                upiProvider === 'paytm' ? 'username@paytm' : 'username@upi'
+                                  upiProvider === 'phonepe' ? 'username@yapl' :
+                                    upiProvider === 'paytm' ? 'username@paytm' : 'username@upi'
                               }
                               value={upiId}
                               onChange={(e) => setUpiId(e.target.value.trim())}
